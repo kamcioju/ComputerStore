@@ -5,6 +5,8 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -13,9 +15,9 @@
    <top>
       <AnchorPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar buttonMinWidth="60.0" maxWidth="530.0" prefHeight="80.0" prefWidth="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ButtonBar buttonMinWidth="60.0" maxWidth="530.0" prefHeight="80.0" prefWidth="530.0" stylesheets="@MyStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
               <buttons>
-                <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" text="Button" />
+                <Button mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="64.0" prefWidth="70.0" text="Button" />
                   <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
                   <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
                   <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
@@ -51,7 +53,19 @@
          </padding>
       </VBox>
    </left>
-   <center>
-      <AnchorPane fx:id="content" />
-   </center>
+   <right>
+      <AnchorPane fx:id="content" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="564.0" text="Welcome in our shop!" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="101.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="244.0" prefWidth="437.0" text="standardPc" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="248.0" fitWidth="372.0" onMouseClicked="#GoToPcDescription" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/gaming-pc-under-500-in-2016.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></AnchorPane>
+   </right>
 </BorderPane>
