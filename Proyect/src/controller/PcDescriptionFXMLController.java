@@ -24,16 +24,21 @@ import model.PC;
  */
 public class PcDescriptionFXMLController implements Initializable {
 
-    private PC currentPc;
+ 
     @FXML private TableView<Product> productsTableView;
     @FXML private TableColumn<Product, Integer> priceColumn;
     @FXML private TableColumn<Product, Integer> quantityColumn;
     @FXML private TableColumn<Product, String> descriptionColumn;
     @FXML private TableColumn<Product, String> categoryColumn;
     
+    private ObservableList<Product> product_list = FXCollections.observableArrayList();
+    private PC currentPc;
+    
     public void initController(PC pc)
     {
         this.currentPc = pc;    
+       addComponentsToTableView(product_list);
+        
     }
     
   
@@ -43,15 +48,14 @@ public class PcDescriptionFXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ObservableList<Product> product_list = FXCollections.observableArrayList();
-        addComponentsToTableView(product_list);
-        productsTableView.setItems(product_list);
+      
         
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("description"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("category"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
-        }
+       
+}
     
     
         private void addComponentsToTableView( ObservableList<Product> product_list)
@@ -84,6 +88,9 @@ public class PcDescriptionFXMLController implements Initializable {
         {
         product_list.addAll(currentPc.getOptionalComponents());    
         }
+           
+           
+           productsTableView.setItems(product_list);
         
     }
     
