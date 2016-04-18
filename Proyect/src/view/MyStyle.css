@@ -9,7 +9,10 @@
     -fx-text-fill: white;
     -fx-opacity: 0.6;
 }
-
+.MainTitle{
+    border-top-left-radius:6px;
+    border-bottom-left-radius:6px;
+}
 .label-bright {
     -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI Semibold";
@@ -104,6 +107,8 @@
     -fx-padding: 0 0 0 0;
     -fx-text-fill: white;
     -fx-font-size: 14px;
+    -fx-min-width:15;
+    -fx-min-height:18;
     
 }
 .button > .image{
@@ -111,7 +116,7 @@
 }
 .buttonMenu {
     -fx-background-insets: 0,0,0,0;
-    -fx-padding: 0 0 0 15;
+    -fx-padding: 0 0 0 10;
     -fx-pref-width: 130;
     -fx-pref-height:40;
     -fx-max-height:50;
@@ -123,6 +128,7 @@
 .sliderButtonMenu {
     -fx-text-fill: white;
     -fx-padding: 0 0 0 0;
+    -fx-min-height:18;
 
 }
 .sliderButtonMenu >.titled-pane > .title {
@@ -130,12 +136,13 @@
     -fx-font-size: 14px;
     -fx-pref-height:40;
     -fx-max-height:50;
-   
+   -fx-min-height:18;
 }
 .sliderButtonMenu >.titled-pane > *.content {
     -fx-background-color:
     -fx-box-border,#000000;
     -fx-padding: -0.5em;
+    
 }
 .sliderButtonMenu >.titled-pane > .title:hover {
     -fx-background-color:
@@ -143,12 +150,13 @@
             linear-gradient(#539eff, #2f4b8f),
             linear-gradient(#5477df, #263e75),
             linear-gradient(#2f4588, #44aabe);
+    -fx-min-height:18;
 }
 .buttonMenuSmall {
     -fx-pref-width: 130;
-    -fx-pref-height:20;
-    -fx-max-height:20;
-    -fx-min-height:15;
+    -fx-pref-height:30;
+    -fx-max-height:30;
+    -fx-min-height:16;
     -fx-font-size: 13px;
 
 }

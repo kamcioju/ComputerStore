@@ -12,11 +12,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="702.0" prefWidth="700.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+<BorderPane minHeight="540.0" minWidth="800.0" prefHeight="540.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
    <top>
-      <AnchorPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
+      <AnchorPane maxHeight="80.0" prefHeight="80.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar buttonMinWidth="60.0" layoutX="8.0" maxWidth="530.0" prefHeight="80.0" prefWidth="530.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" layoutX="162.0" layoutY="1.0" prefHeight="74.0" prefWidth="120.0" style="-fx-font-size: 23; -fx-background-color: #191919; -fx-text-fill: white; -fx-background-radius: 30 0 0 30;" styleClass="MainTitle" text="Shoping Cart" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="577.0" AnchorPane.topAnchor="1.0" />
+            <ButtonBar buttonMinWidth="60.0" layoutX="70.0" minWidth="300.0" prefHeight="80.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="117.0" AnchorPane.topAnchor="0.0">
               <buttons>
                 <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
                      <graphic>
@@ -103,7 +104,7 @@
                   </Button>
               </buttons>
             </ButtonBar>
-            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="99.0" styleClass="buttonBasket" text="Cart" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="9.0">
+            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="99.0" styleClass="buttonBasket" text="Cart" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
                      <image>
@@ -116,96 +117,92 @@
       </AnchorPane>
    </top>
    <left>
-      <VBox minWidth="-Infinity" prefHeight="622.0" prefWidth="136.0" style="-fx-fill-width: true;" styleClass="menu-bar" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER_LEFT" depthTest="ENABLE" focusTraversable="true" style="-fx-fill-width: true;" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="46.0" prefWidth="136.0" scaleY="1.06" style="-fx-font-size: 23; -fx-background-radius: 1; -fx-background-color: #191919; -fx-text-fill: white;" styleClass="tex" text="Our Shop" translateY="1.0" />
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="136.0" scaleY="1.06" style="-fx-font-size: 23; -fx-background-radius: 20 20 0 0; -fx-background-color: #191919; -fx-text-fill: white;" styleClass="tex" text="Our Shop" translateY="1.0" />
             <Label prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-background-radius: 1; -fx-background-color: grey;" styleClass="tex" text="Mandatory:" />
-            <VBox spacing="3.0">
+            <Button mnemonicParsing="false" styleClass="buttonMenu" text="Motherboard" />
+            <Button mnemonicParsing="false" styleClass="buttonMenu" text="CPU" />
+            <Button mnemonicParsing="false" styleClass="buttonMenu" text="RAM" />
+            <Button mnemonicParsing="false" styleClass="buttonMenu" text="Graphics card" />
+            <AnchorPane prefWidth="137.0" styleClass="sliderButtonMenu">
                <children>
-                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="Motherboard" />
-                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="CPU" />
-                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="RAM" />
-                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="Graphics card" />
-                  <AnchorPane prefWidth="100.0" styleClass="sliderButtonMenu">
-                     <children>
-                        <TitledPane alignment="CENTER" expanded="false" styleClass="sliderButtonMenu" text="Hard Disk" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <content>
-                              <VBox styleClass="menu-bar">
-                                 <children>
-                                    <Button mnemonicParsing="false" text="HDD">
-                                       <styleClass>
-                                          <String fx:value="button" />
-                                          <String fx:value="buttonMenu" />
-                                       </styleClass>
-                                    </Button>
-                                    <Button mnemonicParsing="false" text="SSD">
-                                       <styleClass>
-                                          <String fx:value="button" />
-                                          <String fx:value="buttonMenu" />
-                                       </styleClass>
-                                    </Button>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 
-                              </VBox>
-                           </content>
-                        </TitledPane>
-                     </children>
-                  </AnchorPane>
-                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="Case" />
-                  <Label prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-background-radius: 1; -fx-background-color: grey;" styleClass="tex" text="Optional:" />
-                  <Button mnemonicParsing="false" text="Keyboard">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Mouse">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Monitor">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Speakers">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Card multireader">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="DVD/Bluray">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Fan">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Power suply">
-                     <styleClass>
-                        <String fx:value="buttonMenu" />
-                        <String fx:value="buttonMenuSmall" />
-                     </styleClass>
-                  </Button>
+                  <TitledPane alignment="CENTER" expanded="false" styleClass="sliderButtonMenu" text="Hard Disk" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <VBox minHeight="18.0" styleClass="menu-bar">
+                           <children>
+                              <Button mnemonicParsing="false" text="HDD">
+                                 <styleClass>
+                                    <String fx:value="button" />
+                                    <String fx:value="buttonMenu" />
+                                 </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" text="SSD">
+                                 <styleClass>
+                                    <String fx:value="button" />
+                                    <String fx:value="buttonMenu" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           
+                                                </VBox>
+                     </content>
+                  </TitledPane>
                </children>
-            </VBox>
+            </AnchorPane>
+            <Button mnemonicParsing="false" styleClass="buttonMenu" text="Case" />
+            <Label prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-background-radius: 1; -fx-background-color: grey;" styleClass="tex" text="Optional:" />
+            <Button mnemonicParsing="false" text="Keyboard">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Mouse">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Monitor">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Speakers">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Card multireader">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="DVD/Bluray">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Fan">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" text="Power suply">
+               <styleClass>
+                  <String fx:value="buttonMenu" />
+                  <String fx:value="buttonMenuSmall" />
+               </styleClass>
+            </Button>
          </children>
          <padding>
             <Insets bottom="10.0" />
