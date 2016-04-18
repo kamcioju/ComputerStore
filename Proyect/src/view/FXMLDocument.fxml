@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="480.0" minWidth="640.0" prefHeight="700.0" prefWidth="700.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyect.FXMLDocumentController">
+<VBox minHeight="480.0" minWidth="640.0" prefHeight="700.0" prefWidth="700.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
    <children>
       <AnchorPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" styleClass="menu-bar" VBox.vgrow="ALWAYS">
          <children>
