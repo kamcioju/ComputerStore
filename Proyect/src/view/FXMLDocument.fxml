@@ -2,7 +2,6 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
@@ -129,7 +128,7 @@
                   <Button mnemonicParsing="false" styleClass="buttonMenu" text="Graphics card" />
                   <AnchorPane prefWidth="100.0" styleClass="sliderButtonMenu">
                      <children>
-                        <TitledPane alignment="CENTER" expanded="false" style="-fx-background-color: dark; -fx-border-color: dark; -fx-border-radius: 10; -fx-text-alignment: center;" styleClass="sliderButtonMenu" text="Hard Disk" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TitledPane alignment="CENTER" expanded="false" styleClass="sliderButtonMenu" text="Hard Disk" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
                               <VBox styleClass="menu-bar">
                                  <children>
@@ -149,9 +148,7 @@
                                  <opaqueInsets>
                                     <Insets />
                                  </opaqueInsets>
-                                 <cursor>
-                                    <Cursor fx:constant="DEFAULT" />
-                                 </cursor>
+                                 
                               </VBox>
                            </content>
                         </TitledPane>
