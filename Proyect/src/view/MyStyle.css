@@ -118,7 +118,7 @@
     -fx-min-height:18;
     -fx-font-size: 15px;
     -fx-background-color: null;
-    -fx-alignment:left;
+    
 }
 .sliderButtonMenu {
     -fx-text-fill: white;
@@ -130,11 +130,11 @@
     -fx-font-size: 14px;
     -fx-pref-height:40;
     -fx-max-height:50;
-    -fx-alignment:left;
+   
 }
 .sliderButtonMenu >.titled-pane > *.content {
     -fx-background-color:
-    -fx-box-border,dark;
+    -fx-box-border,#000000;
     -fx-padding: -0.5em;
 }
 .sliderButtonMenu >.titled-pane > .title:hover {
@@ -199,7 +199,7 @@
 .button:focused {
     -fx-border-color: white, white;
     -fx-border-width: 1, 1;
-    -fx-border-style: solid, segments(1, 1);
+ 
     -fx-border-radius: 0, 0;
     -fx-border-insets: 1 1 1 1, 0;
 }
