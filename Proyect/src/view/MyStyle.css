@@ -99,24 +99,55 @@
  * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
  */
 .button {
-    -fx-padding: 5 22 5 22;   
-    -fx-border-color: #e2e2e2;
-    -fx-border-width: 2;
-    -fx-background-radius: 0;
-    -fx-background-color: #1d1d1d;
-    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-    -fx-font-size: 11pt;
-    -fx-text-fill: #d8d8d8;
-    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#539eff, #2f4b8f),
+        linear-gradient(#5477df, #263e75),
+        linear-gradient(#395cab, #0c185c);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 10 10 10 10;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
 }
-
+.buttonBasket{
+    -fx-background-color: 
+        #7ebcea,
+        linear-gradient(#06b70e, #0a8f00),
+        linear-gradient(#02b751, #0a5916),
+        linear-gradient(#00f506, #085300);
+    -fx-text-fill: black;
+}
 .button:hover {
-    -fx-background-color: #3a3a3a;
+    -fx-background-color:
+            rgba(0, 0, 0, 0.01),
+            linear-gradient(#539eff, #2f4b8f),
+            linear-gradient(#5477df, #263e75),
+            linear-gradient(#2f4588, #44aabe);
+}
+.buttonBasket:hover {
+    -fx-background-color:
+            rgba(0, 0, 0, 0.01),
+            linear-gradient(#06b70e, #0a8f00),
+            linear-gradient(#02b751, #0a5916),
+            linear-gradient(#00f506, rgba(177, 255, 172, 0.79));
 }
 
 .button:pressed, .button:default:hover:pressed {
-  -fx-background-color: white;
+    -fx-background-color:
+            rgba(0, 0, 0, 0.01),
+            linear-gradient(#539eff, #2f4b8f),
+            linear-gradient(#5477df, #263e75),
+            linear-gradient(#afbdec, #9becff);
   -fx-text-fill: #1d1d1d;
+}
+.buttonBasket:pressed, .button:default:hover:pressed {
+    -fx-background-color:
+            #7ebcea,
+            linear-gradient(#06b70e, #0a8f00),
+            linear-gradient(#02b751, #0a5916),
+            linear-gradient(#b2f5ab, #dcffd8);
+    -fx-text-fill: #1d1d1d;
 }
 
 .button:focused {

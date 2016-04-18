@@ -4,15 +4,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="480.0" minWidth="640.0" prefHeight="700.0" prefWidth="700.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
-   <children>
-      <AnchorPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" styleClass="menu-bar" VBox.vgrow="ALWAYS">
+<BorderPane prefHeight="702.0" prefWidth="700.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+   <top>
+      <AnchorPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
             <ButtonBar buttonMinWidth="60.0" maxWidth="530.0" prefHeight="80.0" prefWidth="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
               <buttons>
@@ -24,32 +23,35 @@
                   <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
               </buttons>
             </ButtonBar>
-            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0" />
+            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" styleClass="buttonBasket" text="Button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0" />
          </children>
       </AnchorPane>
-      <HBox fillHeight="false" styleClass="menu" VBox.vgrow="ALWAYS">
+   </top>
+   <left>
+      <VBox minWidth="-Infinity" prefHeight="622.0" prefWidth="136.0" spacing="8.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <VBox minWidth="-Infinity" prefWidth="110.0" spacing="8.0" styleClass="menu-bar">
-               <children>
-                  <Label text="Graphics" />
-                  <Label text="Procesors" />
-                  <Label text="RAMS" />
-                  <Label text="Motherboards" />
-                  <Label text="HDD'S" />
-                  <Label text="SSD's" />
-                  <Label text="Mouse" />
-                  <Label text="Keyboard" />
-               </children>
-               <padding>
-                  <Insets left="15.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="616.0" prefWidth="708.0" HBox.hgrow="ALWAYS">
-               <content>
-                  <ListView minWidth="0.0" />
-               </content>
-            </ScrollPane>
+            <Label text="Motherboard" />
+            <Label text="Graphic Card" />
+            <Label text="Procesor" />
+            <Label text="RAM" />
+            <Label text="HDD" />
+            <Label text="Case" />
+            <Separator prefWidth="200.0" />
+            <Label text="Power Suply" />
+            <Label text="Screen" />
+            <Label text="Mouse" />
+            <Label text="Keyboard" />
+            <Label text="Monitor" />
+            <Label text="Fan" />
+            <Label text="Dvd/Bluray" />
+            <Label text="Card multireader" />
          </children>
-      </HBox>
-   </children>
-</VBox>
+         <padding>
+            <Insets left="15.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="content" />
+   </center>
+</BorderPane>
