@@ -2,8 +2,9 @@
     -fx-background-color: #1d1d1d;
 }
 
+
 .label {
-    -fx-font-size: 11pt;
+    -fx-font-size: 8pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: white;
     -fx-opacity: 0.6;
@@ -78,7 +79,7 @@
 }
 
 .menu-bar .label {
-    -fx-font-size: 14pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-opacity: 0.9;
@@ -92,12 +93,6 @@
     -fx-font-size: 12pt;
     -fx-font-family: "Segoe UI Semibold";
 }
-
-/* 
- * Metro style Push Button
- * Author: Pedro Duque Vieira
- * http://pixelduke.wordpress.com/2012/10/23/jmetro-windows-8-controls-on-java/
- */
 .button {
     -fx-background-color: 
         #000000,
@@ -106,9 +101,56 @@
         linear-gradient(#395cab, #0c185c);
     -fx-background-insets: 0,1,2,3;
     -fx-background-radius: 3,2,2,2;
-    -fx-padding: 10 10 10 10;
+    -fx-padding: 0 0 0 0;
     -fx-text-fill: white;
     -fx-font-size: 14px;
+    
+}
+.button > .image{
+    -fx-background-color:transparent
+}
+.buttonMenu {
+    -fx-background-insets: 0,0,0,0;
+    -fx-padding: 0 0 0 15;
+    -fx-pref-width: 130;
+    -fx-pref-height:40;
+    -fx-max-height:50;
+    -fx-min-height:18;
+    -fx-font-size: 15px;
+    -fx-background-color: null;
+    -fx-alignment:left;
+}
+.sliderButtonMenu {
+    -fx-text-fill: white;
+    -fx-padding: 0 0 0 0;
+
+}
+.sliderButtonMenu >.titled-pane > .title {
+    -fx-background-color: null;
+    -fx-font-size: 14px;
+    -fx-pref-height:40;
+    -fx-max-height:50;
+    -fx-alignment:left;
+}
+.sliderButtonMenu >.titled-pane > *.content {
+    -fx-background-color:
+    -fx-box-border,dark;
+    -fx-padding: -0.5em;
+}
+.sliderButtonMenu >.titled-pane > .title:hover {
+    -fx-background-color:
+            rgba(0, 0, 0, 0.01),
+            linear-gradient(#539eff, #2f4b8f),
+            linear-gradient(#5477df, #263e75),
+            linear-gradient(#2f4588, #44aabe);
+}
+.buttonMenuSmall {
+    -fx-pref-width: 130;
+    -fx-pref-height:20;
+    -fx-max-height:20;
+    -fx-min-height:15;
+    -fx-font-size: 13px;
+
 }
 .buttonBasket{
     -fx-background-color: 
@@ -118,6 +160,8 @@
         linear-gradient(#00f506, #085300);
     -fx-text-fill: black;
 }
+
+
 .button:hover {
     -fx-background-color:
             rgba(0, 0, 0, 0.01),
@@ -125,15 +169,17 @@
             linear-gradient(#5477df, #263e75),
             linear-gradient(#2f4588, #44aabe);
 }
-.buttonBasket:hover {
+.buttonBasket:hover{
     -fx-background-color:
-            rgba(0, 0, 0, 0.01),
+            #7ebcea,
             linear-gradient(#06b70e, #0a8f00),
             linear-gradient(#02b751, #0a5916),
-            linear-gradient(#00f506, rgba(177, 255, 172, 0.79));
+            linear-gradient(#83f590, #afe8b7);
+    -fx-text-fill: black;
 }
 
-.button:pressed, .button:default:hover:pressed {
+
+.button:pressed, .button:default:hover:pressed, .sliderButtonMenu >.titled-pane > .title:hover:pressed  {
     -fx-background-color:
             rgba(0, 0, 0, 0.01),
             linear-gradient(#539eff, #2f4b8f),
@@ -141,7 +187,7 @@
             linear-gradient(#afbdec, #9becff);
   -fx-text-fill: #1d1d1d;
 }
-.buttonBasket:pressed, .button:default:hover:pressed {
+.buttonBasket:pressed {
     -fx-background-color:
             #7ebcea,
             linear-gradient(#06b70e, #0a8f00),
@@ -167,8 +213,29 @@
 .button:default {
     -fx-background-color: -fx-focus-color;
     -fx-text-fill: #ffffff;
+    
 }
 
-.button:default:hover {
-    -fx-background-color: derive(-fx-focus-color,30%);
+.button:default:hover{
+     -fx-background-color: derive(-fx-focus-color,30%);
+ }
+.separator {
+    -fx-skin: "com.sun.javafx.scene.control.skin.SeparatorSkin";
+}
+
+.separator .line {
+    -fx-border-style: segments(0.166667em, 0.166667em);
+    -fx-border-width: 0.083333em; /* 1 */
+}
+
+.separator:horizontal .line {
+    -fx-background-color: null;
+    -fx-padding: 0.083333em 0.0em 0.0em 0.0em; /* 1 0 0 0 */
+    -fx-border-color: derive(-fx-background,-20%) transparent transparent transparent;
+}
+
+.separator:vertical .line {
+    -fx-background-color: null;
+    -fx-padding: 0.0em 0.083333em 0.0em 0.0em; /* 0 1 0 0 */
+    -fx-border-color:  transparent derive(-fx-background,-20%) transparent transparent;
 }

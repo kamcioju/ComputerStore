@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -13,41 +17,201 @@
    <top>
       <AnchorPane maxHeight="80.0" minHeight="80.0" prefHeight="80.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar buttonMinWidth="60.0" maxWidth="530.0" prefHeight="80.0" prefWidth="530.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ButtonBar buttonMinWidth="60.0" layoutX="8.0" maxWidth="530.0" prefHeight="80.0" prefWidth="530.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="0.0">
               <buttons>
-                <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" text="Button" />
+                <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                     <graphic>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../img/motherboard.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Motherboard" />
+                           </children>
+                        </VBox>
+                     </graphic></Button>
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                     <graphic>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../img/cpu.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="CPU" />
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                     <graphic>
+                        <VBox alignment="TOP_CENTER" style="-fx-background-color: transparent;">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../img/ram.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="RAM" />
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                     <graphic>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../img/graphic.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Graphics Card" />
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                     <graphic>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../img/hdd.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Hard Disk" />
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </Button>
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                     <graphic>
+                        <VBox alignment="TOP_CENTER">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../img/case.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Case" />
+                           </children>
+                        </VBox>
+                     </graphic>
+                  </Button>
               </buttons>
             </ButtonBar>
-            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="76.0" styleClass="buttonBasket" text="Button" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0" />
+            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="99.0" styleClass="buttonBasket" text="Cart" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="9.0">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../img/basket1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </top>
    <left>
-      <VBox minWidth="-Infinity" prefHeight="622.0" prefWidth="136.0" spacing="8.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
+      <VBox minWidth="-Infinity" prefHeight="622.0" prefWidth="136.0" style="-fx-fill-width: true;" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Motherboard" />
-            <Label text="Graphic Card" />
-            <Label text="Procesor" />
-            <Label text="RAM" />
-            <Label text="HDD" />
-            <Label text="Case" />
-            <Separator prefWidth="200.0" />
-            <Label text="Power Suply" />
-            <Label text="Screen" />
-            <Label text="Mouse" />
-            <Label text="Keyboard" />
-            <Label text="Monitor" />
-            <Label text="Fan" />
-            <Label text="Dvd/Bluray" />
-            <Label text="Card multireader" />
+            <Label prefHeight="46.0" prefWidth="136.0" scaleY="1.06" style="-fx-font-size: 23; -fx-background-radius: 1; -fx-background-color: #191919; -fx-text-fill: white;" styleClass="tex" text="Our Shop" translateY="1.0" />
+            <Label prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-background-radius: 1; -fx-background-color: grey;" styleClass="tex" text="Mandatory:" />
+            <VBox spacing="3.0">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="Motherboard" />
+                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="CPU" />
+                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="RAM" />
+                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="Graphics card" />
+                  <AnchorPane prefWidth="100.0" styleClass="sliderButtonMenu">
+                     <children>
+                        <TitledPane alignment="CENTER" expanded="false" style="-fx-background-color: dark; -fx-border-color: dark; -fx-border-radius: 10; -fx-text-alignment: center;" styleClass="sliderButtonMenu" text="Hard Disk" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox styleClass="menu-bar">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="HDD">
+                                       <styleClass>
+                                          <String fx:value="button" />
+                                          <String fx:value="buttonMenu" />
+                                       </styleClass>
+                                    </Button>
+                                    <Button mnemonicParsing="false" text="SSD">
+                                       <styleClass>
+                                          <String fx:value="button" />
+                                          <String fx:value="buttonMenu" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+                  <Button mnemonicParsing="false" styleClass="buttonMenu" text="Case" />
+                  <Label prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-background-radius: 1; -fx-background-color: grey;" styleClass="tex" text="Optional:" />
+                  <Button mnemonicParsing="false" text="Keyboard">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Mouse">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Monitor">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Speakers">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Card multireader">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="DVD/Bluray">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Fan">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+                  <Button mnemonicParsing="false" text="Power suply">
+                     <styleClass>
+                        <String fx:value="buttonMenu" />
+                        <String fx:value="buttonMenuSmall" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </VBox>
          </children>
          <padding>
-            <Insets left="15.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" />
          </padding>
       </VBox>
    </left>
