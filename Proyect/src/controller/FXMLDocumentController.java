@@ -53,7 +53,7 @@ public class FXMLDocumentController implements Initializable {
         }
         
         data = FXCollections.observableArrayList(myData);
-        ramListView.setItems(data);
+        //ramListView.setItems(data);
         
         // TODO
     }    
