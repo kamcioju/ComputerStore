@@ -229,10 +229,9 @@
          </padding>
       </VBox>
    </left>
-   <right>
+   <center>
       <AnchorPane fx:id="content" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="564.0" text="Welcome in our shop!" textAlignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="101.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="244.0" prefWidth="437.0" text="standardPc" textAlignment="CENTER">
                <graphic>
                   <ImageView fitHeight="248.0" fitWidth="372.0" onMouseClicked="#GoToPcDescription" pickOnBounds="true" preserveRatio="true">
@@ -242,6 +241,8 @@
                   </ImageView>
                </graphic>
             </Button>
-         </children></AnchorPane>
-   </right>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="564.0" text="Welcome in our shop!" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
