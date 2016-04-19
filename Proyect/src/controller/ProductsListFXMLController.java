@@ -36,7 +36,6 @@ public class ProductsListFXMLController implements Initializable {
         this.productList = p_list;
         product_list.addAll(p_list);
         productsTableView.setItems(product_list);
-        productsTableView.autosize();
         //this.currentPc = pc;    
        //addComponentsToTableView(product_list);
         
@@ -47,12 +46,14 @@ public class ProductsListFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        descriptionColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(2));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("description"));
+        
+        priceColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(4));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
+        
+        quantityColumn.minWidthProperty().bind(productsTableView.widthProperty().divide(3));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Stock"));
-        //productsTableView.setColumnResizePolicy((param) -> true );
-        productsTableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-
         // TODO
     }    
     
