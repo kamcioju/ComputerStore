@@ -7,6 +7,10 @@ package model;
 import es.upv.inf.*;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 
 /**
@@ -22,6 +26,8 @@ public class PC {
     private List<Product> gpuList = new ArrayList<Product>();
     private List<Product> hardDriveList= new ArrayList<Product>();
     private List<Product> optionalComponents = new ArrayList<Product>();
+
+    
     
     private double totalPrice;
     private String pcName; 

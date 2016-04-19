@@ -34,10 +34,10 @@ import model.PC;
  * @author kaqq.pl
  */
 public class FXMLDocumentController implements Initializable {
-    
+
     @FXML
     private Label label;
-     @FXML
+    @FXML
     private Button motherboardButton;
     @FXML
     private AnchorPane content;
@@ -45,42 +45,57 @@ public class FXMLDocumentController implements Initializable {
     private ListView ramListView;
     private ObservableList<String> data = null;
     private List<PC> pcList = new ArrayList<>();
+    private List<Product> product_list = new ArrayList<>();
 
-    private void ChangeContent(FXMLLoader loader)
-    {
+    private void ChangeContent(Parent loader) {
         Stage search = new Stage();
-               try {
-                   AnchorPane aPane = (AnchorPane) loader.load();
-                content.getChildren().clear();
-            
-            content.getChildren().add(aPane);
-            
+        AnchorPane aPane = (AnchorPane) loader;
+        content.getChildren().clear();
+        content.getChildren().add(aPane);
+
+    }
+
+    @FXML
+    private void GoToPcDescription(ActionEvent event) {
+        try {
+
+            String pcName = event.getSource().toString();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
+            Parent root = (Parent) loader.load();
+            PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
+            ChangeContent(root);
+            pcController.initController(pcList.get(0));
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-    }
- 
-    @FXML 
-    private void GoToPcDescription(ActionEvent event)
-    {
-       
-       String pcName = event.getSource().toString();
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
-       PcDescriptionFXMLController pcController = new PcDescriptionFXMLController();
-//               loader.<PcDescriptionFXMLController>getController();
-       
-       pcController.initController(pcList.get(0));
-       ChangeContent(loader);
-       
+        }
+        
+     @FXML
+     private void GoToProductsList(ActionEvent event)
+     {
+         try
+         {
+             Button btn = (Button) event.getSource(); 
+             String categoryName = btn.getText();
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ProductsListFXML.fxml"));
+             Parent root = (Parent) loader.load();
+             ProductsListFXMLController productsController = loader.<ProductsListFXMLController>getController();
+            ChangeContent(root);
+            product_list = Database.getProductByCategory(Product.Category.MOTHERBOARD);
+            productsController.initController(product_list);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+         }
+     
 
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainWindowFXML.fxml"));
-  //     ChangeContent(loader);
-}
+        //     ChangeContent(loader);
     
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+
         PC standardPC = new PC();
         standardPC.setMotherboard(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0));
         standardPC.setComputerCase(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0));
@@ -89,8 +104,8 @@ public class FXMLDocumentController implements Initializable {
         standardPC.setHardDriveList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
         standardPC.setRamList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
         standardPC.setOptionalComponents(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
-        
+
         pcList.add(standardPC);
-    }    
-    
+    }
+
 }
