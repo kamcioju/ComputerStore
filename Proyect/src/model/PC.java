@@ -5,7 +5,12 @@
  */
 package model;
 import es.upv.inf.*;
+import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 
 /**
@@ -13,16 +18,19 @@ import java.util.List;
  * @author qjot
  */
 public class PC {
-
+    
     private Product motherboard;
     private Product cpu;
     private Product computerCase;
-    private List<Product> ramList;
-    private List<Product> gpuList;
-    private List<Product> hardDriveList;
-    private List<Product> optionalComponents;
-    private double totalPrice;
+    private List<Product> ramList = new ArrayList<Product>();
+    private List<Product> gpuList = new ArrayList<Product>();
+    private List<Product> hardDriveList= new ArrayList<Product>();
+    private List<Product> optionalComponents = new ArrayList<Product>();
+
     
+    
+    private double totalPrice;
+    private String pcName; 
     //Constructors
     public PC()
     {
@@ -94,7 +102,5 @@ public class PC {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
-    
-    
-    
+
 }
