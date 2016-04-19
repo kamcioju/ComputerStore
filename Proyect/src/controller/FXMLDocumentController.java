@@ -51,7 +51,7 @@ public class FXMLDocumentController implements Initializable {
         AnchorPane aPane = (AnchorPane) loader;
         aPane.autosize(); 
         content.getChildren().clear();
-        content.getChildren().add(aPane);
+        content.getChildren().addAll(aPane.getChildren());
     }
     
     public void ShowDefaultPc(String pcName)

@@ -8,6 +8,7 @@ package controller;
 import es.upv.inf.Product;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -42,8 +43,7 @@ public class ProductsListFXMLController implements Initializable {
         product_list.addAll(p_list);
         productsTableView.setItems(product_list);
         //this.currentPc = pc;    
-       //addComponentsToTableView(product_list);
-        
+       //addComponentsToTableView(product_list)
     }
      @FXML 
     public void GoToProductDescription(ActionEvent event)
