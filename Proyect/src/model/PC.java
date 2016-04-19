@@ -31,6 +31,14 @@ public class PC {
     
     private double totalPrice;
     private String pcName; 
+
+    public String getPcName() {
+        return pcName;
+    }
+
+    public void setPcName(String pcName) {
+        this.pcName = pcName.toUpperCase();
+    }
     //Constructors
     public PC()
     {

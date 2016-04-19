@@ -6,13 +6,17 @@
 package controller;
 
 import es.upv.inf.Product;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,6 +35,7 @@ public class ProductsListFXMLController implements Initializable {
     @FXML private TableColumn<Product, String> descriptionColumn; 
     private ObservableList<Product> product_list = FXCollections.observableArrayList();
     private List<Product> productList;
+    private Product selectedProduct;
     public void initController(List<Product> p_list)
     {
         this.productList = p_list;
@@ -39,6 +44,23 @@ public class ProductsListFXMLController implements Initializable {
         //this.currentPc = pc;    
        //addComponentsToTableView(product_list);
         
+    }
+    
+    @FXML 
+    public void GoToProductDescription(ActionEvent event)
+    {
+        try
+        {
+        selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
+        Parent root = (Parent) loader.load();
+        FXMLDocumentController appController = loader.<FXMLDocumentController>getController();
+        appController.GoToProductDescription(selectedProduct);
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
     
     /**
