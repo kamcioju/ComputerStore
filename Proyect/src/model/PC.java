@@ -11,23 +11,22 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 /**
  *
  * @author qjot
  */
-public class PC {
-    
+@XmlRootElement
+public class PC {    
     private Product motherboard;
     private Product cpu;
     private Product computerCase;
     private List<Product> ramList = new ArrayList<Product>();
     private List<Product> gpuList = new ArrayList<Product>();
     private List<Product> hardDriveList= new ArrayList<Product>();
-    private List<Product> optionalComponents = new ArrayList<Product>();
-
-    
+    private List<Product> optionalComponents = new ArrayList<Product>();   
     
     private double totalPrice;
     private String pcName; 
@@ -101,6 +100,22 @@ public class PC {
 
     public void setOptionalComponents(List<Product> optionalComponents) {
         this.optionalComponents = optionalComponents;
+    }
+    
+    
+     public void addRam(Product ram) {
+        this.ramList.add(ram);
+    }
+
+    public void addGpu(Product gpu) {
+        this.gpuList.add(gpu);
+    }
+    public void addHardDrive(Product hardDrive) {
+        this.hardDriveList.add(hardDrive);
+    }
+
+    public void addOptionalComponent(Product optionalComponent) {
+        this.optionalComponents.add(optionalComponent);
     }
 
     public double getTotalPrice() {
