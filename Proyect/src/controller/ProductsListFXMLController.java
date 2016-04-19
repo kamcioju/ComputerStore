@@ -45,8 +45,7 @@ public class ProductsListFXMLController implements Initializable {
        //addComponentsToTableView(product_list);
         
     }
-    
-    @FXML 
+     @FXML 
     public void GoToProductDescription(ActionEvent event)
     {
         try
@@ -63,13 +62,19 @@ public class ProductsListFXMLController implements Initializable {
         }
     }
     
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        descriptionColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(2));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("description"));
+        
+        priceColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(4));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
+        
+        quantityColumn.minWidthProperty().bind(productsTableView.widthProperty().divide(3));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Stock"));
         // TODO
     }    

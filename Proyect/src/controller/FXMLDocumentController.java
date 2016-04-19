@@ -47,7 +47,9 @@ public class FXMLDocumentController implements Initializable {
 
     private void ChangeContent(Parent loader) {
         Stage search = new Stage();
+        
         AnchorPane aPane = (AnchorPane) loader;
+        aPane.autosize(); 
         content.getChildren().clear();
         content.getChildren().add(aPane);
     }
@@ -68,7 +70,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void GoToPcDescription(ActionEvent event) {
         try {
-
             String pcName = event.getSource().toString();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
             Parent root = (Parent) loader.load();
