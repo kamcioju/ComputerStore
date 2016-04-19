@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listPC>
+    <PC>
+        <cpu>
+            <description>amd fx 4300 3.80ghz. s.am3+</description>
+            <price>69.34</price>
+            <stock>13</stock>
+            <category>CPU</category>
+        </cpu>
+        <gpuList>
+            <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
+            <price>149.17</price>
+            <stock>51</stock>
+            <category>GPU</category>
+        </gpuList>
+        <gpuList>
+            <description>gigabyte gt730 2.0 2gb ddr3 64bits vga+dvi+hdmi</description>
+            <price>57.52</price>
+            <stock>1</stock>
+            <category>GPU</category>
+        </gpuList>
+        <hardDriveList>
+            <description>toshiba hdd 3.5 1tb 32mb sata3 7200rpm</description>
+            <price>39.17</price>
+            <stock>785</stock>
+            <category>HDD</category>
+        </hardDriveList>
+        <motherboard>
+            <description>asrock fm2a58m.vg3+ r2.0 2ddr3 vga gblan matx

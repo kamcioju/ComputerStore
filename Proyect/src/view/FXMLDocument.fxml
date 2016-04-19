@@ -235,7 +235,7 @@
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="101.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="244.0" prefWidth="437.0" text="standardPc" textAlignment="CENTER">
                <graphic>
-                  <ImageView fitHeight="248.0" fitWidth="372.0" onMouseClicked="#GoToPcDescription" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="248.0" fitWidth="372.0"  pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@/gaming-pc-under-500-in-2016.jpg" />
                      </image>

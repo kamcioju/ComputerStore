@@ -6,10 +6,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowFXMLController">
+<AnchorPane fx:id="contentMainView" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowFXMLController">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="564.0" text="Welcome in our shop!" textAlignment="CENTER"  />
-            <Button id="1" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="101.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="244.0" prefWidth="437.0" textAlignment="CENTER" >
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="79.0" prefWidth="564.0" text="Welcome in our shop!" textAlignment="CENTER" />
+            <Button id="standardpc" alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="101.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="244.0" prefWidth="437.0" textAlignment="CENTER">
                <graphic>
                   <ImageView fitHeight="248.0" fitWidth="372.0" pickOnBounds="true" preserveRatio="true">
                      <image>

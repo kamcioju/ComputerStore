@@ -7,6 +7,7 @@ package controller;
 
 import es.upv.inf.Database;
 import es.upv.inf.Product;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,7 +29,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import model.ListPCWrapper;
 import model.PC;
+import model.PcMarshing;
+
 
 /**
  *
@@ -41,26 +45,29 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ListView ramListView;
     private ObservableList<String> data = null;
-    private List<PC> pcList = new ArrayList<>();
+    private ArrayList<PC> pcList = new ArrayList<PC>();
     private List<Product> product_list = new ArrayList<>();
     private PC currentPc;
 
-    private void ChangeContent(Parent loader) {
-        Stage search = new Stage();
-        
+    public void ChangeContent(Parent loader) {
+        Stage search = new Stage();        
         AnchorPane aPane = (AnchorPane) loader;
         aPane.autosize(); 
         content.getChildren().clear();
-        content.getChildren().addAll(aPane.getChildren());
+        //if(type==1)
+        content.getChildren().add(aPane);
+        //else
+        //content.getChildren().addAll(aPane.getChildren());
     }
     
     public void ShowDefaultPc(String pcName)
     {
         for (int i=0; i<pcList.size();i++)
         {
-            if(pcList.get(i).getPcName()==pcName)
+            String tempString = pcList.get(i).getPcName();
+            if(tempString.equals(pcName))
             {
-                GoToPcDescription(pcList.get(i));
+                GoToPcDesc(pcList.get(i));
                 break;
             }
                   
@@ -81,7 +88,7 @@ public class FXMLDocumentController implements Initializable {
         }
         }
     
-    public void GoToPcDescription(PC pc)
+    public void GoToPcDesc(PC pc)
     {
            try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
@@ -93,6 +100,12 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
         
+    }
+    
+    public List<PC> GetPcList()
+    {
+        content.getChildren().clear();
+        return this.pcList;
     }
     
          
@@ -121,7 +134,8 @@ public class FXMLDocumentController implements Initializable {
          {
              FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainWindowFXML.fxml"));
              Parent root = (Parent) loader.load();
-             //ProductsListFXMLController productsController = loader.<ProductsListFXMLController>getController();
+             MainWindowFXMLController mainController = loader.<MainWindowFXMLController>getController();
+             mainController.InitController();
             ChangeContent(root);
          }
          catch(IOException e)
@@ -157,18 +171,12 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
+ PcMarshing.marshalingExample();
 
-        PC standardPC = new PC();
-        standardPC.setPcName("StandardPc");
-        standardPC.setMotherboard(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0));
-        standardPC.setComputerCase(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0));
-        standardPC.setCpu(Database.getProductByCategory(Product.Category.CPU).get(0));
-        standardPC.setGpuList(Database.getProductByCategory(Product.Category.GPU).subList(0, 2));
-        standardPC.setHardDriveList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
-        standardPC.setRamList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
-        standardPC.setOptionalComponents(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
-
-        pcList.add(standardPC);
+       //ListPCWrapper listToSave = new ListPCWrapper();
+       //listToSave.createStandardDatabase();
+       //listToSave.saveListToXml();
     }
 
 }
