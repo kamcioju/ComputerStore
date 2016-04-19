@@ -18,10 +18,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.PC;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
+
+
+
 
 
 /**
@@ -37,6 +42,11 @@ public class ProductsListFXMLController implements Initializable {
     private ObservableList<Product> product_list = FXCollections.observableArrayList();
     private List<Product> productList;
     private Product selectedProduct;
+    @FXML
+    private Rectangle Bottom;
+    @FXML
+    private Button showButton;
+    
     public void initController(List<Product> p_list)
     {
         this.productList = p_list;
@@ -68,14 +78,18 @@ public class ProductsListFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        descriptionColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(2));
+        
+        descriptionColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(2).subtract(10));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("description"));
         
-        priceColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(4));
+        priceColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(4).subtract(10));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
         
-        quantityColumn.minWidthProperty().bind(productsTableView.widthProperty().divide(3));
+        quantityColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(4));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("Stock"));
+       
+       // Bottom.widthProperty().bind(productsTableView.widthProperty()); 
+        //Bottom.xProperty().bind(productsTableView.layoutXProperty());
         // TODO
     }    
     

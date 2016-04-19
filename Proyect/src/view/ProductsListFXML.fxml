@@ -1,20 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Control?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsListFXMLController">
+
+<AnchorPane styleClass="productList" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsListFXMLController">
    <children>
-      <TableView fx:id="productsTableView" fixedCellSize="0.0" maxWidth="1200.0" prefHeight="400.0" prefWidth="500.0" style="-fx-padding: 0;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="509.0" styleClass="background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField text="Description" />
+            <Button fx:id="showButton" mnemonicParsing="false" onAction="#GoToProductDescription" prefHeight="42.0" prefWidth="78.0" text="Search" />
+            
+            <TitledPane alignment="CENTER" styleClass="table-view" stylesheets="@MyStyle.css" text="Set Price" textFill="WHITE">
+                     <content>
+                        <VBox minHeight="18.0" styleClass="menu-bar">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                     <children>
+                        <Slider showTickMarks="true" />
+                     </children>
+                           
+                        </VBox>
+                     </content>
+                  </TitledPane>
+         
+         
+         
+         
+         
+         
+         
+         
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="productsTableView" fixedCellSize="30.0" layoutY="50.0" maxWidth="1200.0" prefHeight="400.0" prefWidth="479.0" style="-fx-padding: 0;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
         
-          <columns>
-          <TableColumn fx:id="descriptionColumn" maxWidth="1.7976931348623157E308" minWidth="150.0" prefWidth="208.0" resizable="false" text="Description" />
-          <TableColumn fx:id="priceColumn" maxWidth="1.7976931348623157E308" minWidth="42.0" prefWidth="109.0" resizable="false" text="Price" />
-            <TableColumn fx:id="quantityColumn" maxWidth="222.0" minWidth="136.0" prefWidth="155.0" text="Quantity" />
+                <columns>
+          <TableColumn fx:id="descriptionColumn" maxWidth="800.0" minWidth="120.0" prefWidth="208.0" resizable="false" text="Description" />
+          <TableColumn fx:id="priceColumn" maxWidth="500.0" minWidth="42.0" prefWidth="109.0" resizable="false" text="Price" />
+            <TableColumn fx:id="quantityColumn" maxWidth="300.0" minWidth="120.0" prefWidth="155.0" text="Quantity" />
         </columns>
       </TableView>
-      <Button fx:id="showButton" layoutX="501.0" layoutY="63.0" mnemonicParsing="false" onAction="#GoToProductDescription" text="Show Product" />
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="450.0" maxHeight="61.0" minHeight="61.0" prefHeight="61.0" prefWidth="509.0" styleClass="grad" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ButtonBar buttonOrder="" minHeight="60.0" prefHeight="80.0" prefWidth="358.0">
+               <buttons>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" style="-fx-min-width: 80;" text="Show detalis" textAlignment="CENTER" textOverrun="CLIP">
+                     <effect>
+                        <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
+                     </effect></Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonBasket" text="Add to Card" textAlignment="CENTER">
+                     <effect>
+                        <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
+                     </effect></Button>
+               </buttons>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ButtonBar>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
