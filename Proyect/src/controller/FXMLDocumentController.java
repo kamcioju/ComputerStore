@@ -166,16 +166,9 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             pcList = PcMarshing.unMarshalingDefaultSet().getPcList();
-            List<PC> userPcs = new ArrayList<PC>();
-           // userPcs = PcMarshing.LoadPcConfiguration();
-           // userPcs.get(0).setPcName("dupa");
+           
         } catch (JAXBException e) {
             e.printStackTrace();
-        }
-        if(CurrentContent.type==1)
-        {
-            content.getChildren().clear();
-            content.getChildren().addAll(CurrentContent.currentContent);
         }
     }
 }

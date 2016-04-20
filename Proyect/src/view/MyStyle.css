@@ -322,3 +322,12 @@
     -fx-padding: 0.0em 0.083333em 0.0em 0.0em; /* 0 1 0 0 */
     -fx-border-color:  transparent derive(-fx-background,-20%) transparent transparent;
 }
+.MainMenu{
+    -fx-max-width: 100px; 
+    -fx-max-height: 100px;
+    -fx-pref-height:40;
+}
+.MainMenu >.image-view{
+    -fx-max-width: 10px; 
+    -fx-max-height: 10px;
+}

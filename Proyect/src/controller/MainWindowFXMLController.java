@@ -11,6 +11,7 @@ import static java.lang.System.console;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,10 +19,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.CartPC;
 import model.CurrentContent;
 import model.PC;
+import model.PcMarshing;
 
 /**
  * FXML Controller class
@@ -33,8 +37,12 @@ public class MainWindowFXMLController implements Initializable {
     @FXML
     private AnchorPane contentMainView;
     private List<PC> pcList = new ArrayList<>();
+    @FXML
+    private Button button1;
 
     public void InitController() {
+        button1.setStyle("-fx-background-image: url('/img/Gaming-PC.jpg')");
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
             Parent root = (Parent) loader.load();
@@ -50,30 +58,60 @@ public class MainWindowFXMLController implements Initializable {
         Stage search = new Stage();
         AnchorPane aPane = (AnchorPane) loader;
         aPane.autosize();
-        contentMainView = CurrentContent.currentContent;
-        contentMainView.getChildren().clear();
-        //contentMainView.getChildren().addAll(aPane.getChildren());
-        contentMainView.getChildren().add(aPane);
+
+        CurrentContent.currentContent.getChildren().clear();
+        CurrentContent.currentContent.getChildren().addAll(aPane.getChildren());
 
     }
 
     @FXML
     private void GoToPcDescription(ActionEvent event) {
         try {
-            Button btn = (Button) event.getSource();
-            String pcName = btn.getId();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
-            Parent root = (Parent) loader.load();
-            PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
-            ChangeContent(root);
-            for (int i = 0; i < pcList.size(); i++) {
-                String tempName = pcList.get(i).getPcName().toUpperCase();
-                if (tempName.equals(pcName)) {
-                    pcController.initController(pcList.get(i));
+                Parent root = (Parent) loader.load();
+                PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
+                ChangeContent(root);
+                
+            if (event != null) {
+                Button btn = (Button) event.getSource();
+                String pcName = btn.getId();                
+                for (int i = 0; i < pcList.size(); i++) {
+                    String tempName = pcList.get(i).getPcName().toUpperCase();
+                    if (tempName.equals(pcName)) {
+                        CartPC.currentPC=pcList.get(i);
+                    }
                 }
             }
+            pcController.initController(CartPC.currentPC);
+
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void LoadConfiguration() {
+        List<PC> userPcs = new ArrayList<PC>();
+        userPcs = PcMarshing.LoadPcConfiguration();
+        if (!userPcs.isEmpty()) {
+            List<String> choices = new ArrayList<>();
+            for (PC pc : userPcs) {
+                choices.add(pc.getPcName());
+            }
+            ChoiceDialog<String> dialog = new ChoiceDialog<>("", choices);
+            dialog.setTitle("Load Configuration");
+            dialog.setHeaderText("Your current cart will be removed!");
+            dialog.setContentText("Choose a configuration");
+            Optional<String> result = dialog.showAndWait();
+// Before Java 8
+            if (result.isPresent()) {
+                for (PC pc : userPcs) {
+                    if (pc.getPcName().equals(result.toString())) {
+                        CartPC.currentPC = pc;
+                        GoToPcDescription(null);
+                    }
+                }
+            }
         }
     }
 
@@ -82,4 +120,5 @@ public class MainWindowFXMLController implements Initializable {
         // TODO
 
     }
+
 }

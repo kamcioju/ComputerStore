@@ -17,7 +17,6 @@ import java.util.List;
 public class CartPC {
 
     public static PC currentPC = new PC();
-
     public static String addProduct(Product product) {
         Product.Category cat = product.getCategory();
         String catString = product.getCategory().toString();

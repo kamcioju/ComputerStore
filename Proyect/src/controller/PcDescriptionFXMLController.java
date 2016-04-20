@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -105,6 +106,9 @@ public class PcDescriptionFXMLController implements Initializable {
         String configurationName = configurationField.getText();
         currentPc.setPcName(configurationName);
         PcMarshing.marshalingUserConfiguration(currentPc);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Configuration saved.");
+            alert.showAndWait();
+            //TODO Jak jest pusty field to alert
     }
     @FXML
     private void RemoveFromCard(ActionEvent event) {
