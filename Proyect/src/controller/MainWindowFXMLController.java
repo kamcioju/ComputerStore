@@ -33,9 +33,13 @@ public class MainWindowFXMLController implements Initializable {
         @FXML
         private AnchorPane contentMainView;
         private List<PC> pcList = new ArrayList<>();
+    @FXML
+    private Button button1;
    
         public void InitController()
         {
+             button1.setStyle("-fx-background-image: url('/img/Gaming-PC.jpg')");
+            
                   try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
             Parent root = (Parent) loader.load();
