@@ -166,6 +166,9 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             pcList = PcMarshing.unMarshalingDefaultSet().getPcList();
+            List<PC> userPcs = new ArrayList<PC>();
+           // userPcs = PcMarshing.LoadPcConfiguration();
+           // userPcs.get(0).setPcName("dupa");
         } catch (JAXBException e) {
             e.printStackTrace();
         }
@@ -174,12 +177,5 @@ public class FXMLDocumentController implements Initializable {
             content.getChildren().clear();
             content.getChildren().addAll(CurrentContent.currentContent);
         }
-        
-//        Product motherboard = Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0);
-//        CartPC.currentPC.setPcName("Maturbator");
-//        if(CartPC.addProduct(motherboard))
-//        {
-//            System.out.println("dodano płyte główną do koszyka"+ CartPC.currentPC.getPcName());
-//        }
     }
 }

@@ -30,33 +30,33 @@ import model.PC;
  */
 public class MainWindowFXMLController implements Initializable {
 
-        @FXML
-        private AnchorPane contentMainView;
-        private List<PC> pcList = new ArrayList<>();
-   
-        public void InitController()
-        {
-                  try {
+    @FXML
+    private AnchorPane contentMainView;
+    private List<PC> pcList = new ArrayList<>();
+
+    public void InitController() {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
             Parent root = (Parent) loader.load();
             FXMLDocumentController pcController = loader.<FXMLDocumentController>getController();
-            pcList= pcController.GetPcList();
-         
+            pcList = pcController.GetPcList();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        }
-              
-        private void ChangeContent(Parent loader) {
+    }
+
+    private void ChangeContent(Parent loader) {
         Stage search = new Stage();
         AnchorPane aPane = (AnchorPane) loader;
-        aPane.autosize(); 
+        aPane.autosize();
         contentMainView = CurrentContent.currentContent;
         contentMainView.getChildren().clear();
         //contentMainView.getChildren().addAll(aPane.getChildren());
         contentMainView.getChildren().add(aPane);
-    
-        }
+
+    }
+
     @FXML
     private void GoToPcDescription(ActionEvent event) {
         try {
@@ -77,12 +77,9 @@ public class MainWindowFXMLController implements Initializable {
         }
     }
 
-    
-        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-    }    
-    
+
+    }
 }

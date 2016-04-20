@@ -121,7 +121,7 @@
                   </Button>
               </buttons>
             </ButtonBar>
-            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="105.0" styleClass="buttonBasket" text=" Full Cart" wrapText="true" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="9.0">
+            <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="64.0" prefWidth="105.0" styleClass="buttonBasket" text=" Full Cart" wrapText="true" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
                      <image>

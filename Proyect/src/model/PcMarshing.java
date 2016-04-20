@@ -1,7 +1,13 @@
 package model;
+
 import es.upv.inf.Database;
 import es.upv.inf.Product;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,13 +18,12 @@ import javax.xml.bind.Unmarshaller;
 import model.ListPCWrapper;
 import model.PC;
 
-public class PcMarshing
-{
-	static ListPCWrapper dbList = new ListPCWrapper();
- 
-static
-{
-    dbList.setPcList(new  ArrayList<PC>());
+public class PcMarshing {
+
+    static ListPCWrapper dbList = new ListPCWrapper();
+
+    static {
+        dbList.setPcList(new ArrayList<PC>());
         PC standardPC = new PC();
         standardPC.setPcName("StandardPc");
         standardPC.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(1));
@@ -27,7 +32,7 @@ static
         standardPC.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
-        
+
         PC GamingPc = new PC();
         GamingPc.setPcName("GamingPc");
         GamingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(10));
@@ -40,8 +45,7 @@ static
         GamingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
         GamingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
         GamingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
-        
-        
+
         PC WorkingPc = new PC();
         WorkingPc.setPcName("WorkingPc");
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
@@ -54,37 +58,12 @@ static
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
-        
-        
+
         dbList.getPcList().add(GamingPc);
         dbList.getPcList().add(WorkingPc);
         dbList.getPcList().add(standardPC);
-        
-        	try {
-            File file = new File("PCDatabase.xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxbMarshaller.marshal(dbList, file);
-            jaxbMarshaller.marshal(dbList, System.out);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-}
-		public static ListPCWrapper unMarshalingDefaultSet() throws JAXBException {
-		JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
-		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		ListPCWrapper pcs = (ListPCWrapper) jaxbUnmarshaller.unmarshal( new File("PCDatabase.xml") );
-		//ListPCWrapper pcsList = new ListPCWrapper();
-                //for(int i=0; i< pcsList.getPcList().size(); i++)
-                //{
-                  //  pcsList.addPc();
-		//}
-                return pcs;
-	}
 
-	public static void marshalingDefaultSet() {
-		try {
+        try {
             File file = new File("PCDatabase.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
@@ -94,11 +73,18 @@ static
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-	}
-        
-        
-	public static void marshalingUserConfiguration() {
-		try {
+    }
+
+    public static ListPCWrapper unMarshalingDefaultSet() throws JAXBException {
+        JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
+        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        ListPCWrapper pcs = (ListPCWrapper) jaxbUnmarshaller.unmarshal(new File("PCDatabase.xml"));
+        return pcs;
+    }
+
+    public static void marshalingDefaultSet() {
+        try {
+            File userConfig = new File("userConfigurations");
             File file = new File("PCDatabase.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
@@ -108,6 +94,58 @@ static
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-	}
-        
+    }
+
+    public static void marshalingUserConfiguration(PC pcToSave) {
+        try {
+            dbList.setPcList(new ArrayList<PC>());
+            dbList.addPc(pcToSave);
+            String configurationName = pcToSave.getPcName() + ".xml";
+            File file = new File(configurationName);
+            JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            jaxbMarshaller.marshal(dbList, file);
+            jaxbMarshaller.marshal(dbList, System.out);
+
+            //Save the name to Configuration file <to txt>
+            try {
+                String filename = "userConfigurations.txt";
+                FileWriter fw = new FileWriter(filename, true); //the true will append the new data
+                fw.write(configurationName);//appends the string to the file
+                fw.close();
+            } catch (IOException ioe) {
+                System.err.println("IOException: " + ioe.getMessage());
+            }
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static List<PC> LoadPcConfiguration() {
+        try {
+
+            final List<String> lines;
+            try {
+                Path path = Paths.get("userConfigurations.txt");
+                lines = Files.readAllLines(path);
+                List<PC> userPcList = new ArrayList<PC>();
+                for (String userConfig : lines) {
+                    JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
+                    Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+                    ListPCWrapper pcs = (ListPCWrapper) jaxbUnmarshaller.unmarshal(new File(userConfig));
+                    userPcList.addAll(pcs.getPcList());
+                }
+                return userPcList;
+            } catch (IOException ex) {
+
+            }
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
+
+

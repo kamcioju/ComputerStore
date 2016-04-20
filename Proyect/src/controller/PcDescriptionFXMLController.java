@@ -18,6 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -26,6 +27,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.CurrentContent;
 import model.PC;
+import model.PcMarshing;
 
 /**
  * FXML Controller class
@@ -44,6 +46,7 @@ public class PcDescriptionFXMLController implements Initializable {
     private TableColumn<Product, String> descriptionColumn;
     @FXML
     private TableColumn<Product, String> categoryColumn;
+    @FXML TextField configurationField;
 
     private ObservableList<Product> product_list = FXCollections.observableArrayList();
     private PC currentPc;
@@ -94,40 +97,15 @@ public class PcDescriptionFXMLController implements Initializable {
         if (!currentPc.getProductList().isEmpty()) {
             product_list.addAll(currentPc.getProductList());
         }
-        /*
-        if(currentPc.getMotherboard()!=null)
-        {
-        product_list.add(currentPc.getMotherboard());    
-        }
-        if(currentPc.getCpu()!=null)
-        {
-        product_list.add(currentPc.getCpu());    
-        }
-        if(!currentPc.getGpuList().isEmpty())
-        {
-        product_list.addAll(currentPc.getGpuList());
-        }
-        if(!currentPc.getHardDriveList().isEmpty())
-        {
-        product_list.addAll(currentPc.getHardDriveList());    
-        }
-         if(!currentPc.getRamList().isEmpty())
-        {
-        product_list.addAll(currentPc.getRamList());    
-        }
-        if(currentPc.getComputerCase()!=null)
-        {
-        product_list.add(currentPc.getComputerCase());    
-        }
-           if(!currentPc.getOptionalComponents().isEmpty())
-        {
-        product_list.addAll(currentPc.getOptionalComponents());    
-        }*/
-
         productsTableView.setItems(product_list);
+   }
 
+    @FXML private void SaveConfiguration(ActionEvent ecent)
+    {
+        String configurationName = configurationField.getText();
+        currentPc.setPcName(configurationName);
+        PcMarshing.marshalingUserConfiguration(currentPc);
     }
-
     @FXML
     private void RemoveFromCard(ActionEvent event) {
         
