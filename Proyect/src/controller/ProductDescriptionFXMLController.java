@@ -29,6 +29,7 @@ public class ProductDescriptionFXMLController implements Initializable {
     public void initController(Product _product)
     {
         this.product = _product;
+        companyLabel.setText(product.getDescription());
 //        companyLabel.setText(product.getDescription());
   //      nameLabel.setText(product.getDescription());
    //     priceLabel.setText(String.valueOf(product.getPrice()));

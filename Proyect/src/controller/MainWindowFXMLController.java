@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.CurrentContent;
 import model.PC;
 
 /**
@@ -93,9 +94,12 @@ public class MainWindowFXMLController implements Initializable {
         Stage search = new Stage();
         AnchorPane aPane = (AnchorPane) loader;
         aPane.autosize(); 
+        contentMainView = CurrentContent.currentContent;
         contentMainView.getChildren().clear();
-        contentMainView.getChildren().addAll(aPane.getChildren());
-    }
+        //contentMainView.getChildren().addAll(aPane.getChildren());
+        contentMainView.getChildren().add(aPane);
+    
+        }
             @FXML
     private void GoToPcDescription(ActionEvent event) {
         try {

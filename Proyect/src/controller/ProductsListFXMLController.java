@@ -21,6 +21,9 @@ import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import model.CurrentContent;
 import model.PC;
 
 
@@ -30,6 +33,7 @@ import model.PC;
  * @author qjot
  */
 public class ProductsListFXMLController implements Initializable {
+    @FXML private AnchorPane content;
   @FXML private TableView<Product> productsTableView;
     @FXML private TableColumn<Product, Integer> priceColumn;
     @FXML private TableColumn<Product, Integer> quantityColumn;
@@ -51,16 +55,41 @@ public class ProductsListFXMLController implements Initializable {
         try
         {
         selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ProductDescriptionFXML.fxml"));
         Parent root = (Parent) loader.load();
-        FXMLDocumentController appController = loader.<FXMLDocumentController>getController();
-        appController.GoToProductDescription(selectedProduct);
+        ProductDescriptionFXMLController appController = loader.<ProductDescriptionFXMLController>getController();
+        ChangeContent(root);
+        
+        
+        FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
+        Parent mainRoot = (Parent) mainLoader.load();
+        FXMLDocumentController mainController = mainLoader.<FXMLDocumentController>getController();
+        content = mainController.GetContent();
+        ChangeContent(root);
+        //appController.GoToProductDescription(selectedProduct);
+        
+        
+        //appController.GoToProductDescription(selectedProduct);
+        appController.initController(selectedProduct);
         }
         catch(IOException e)
         {
             e.printStackTrace();
         }
     }
+       public void ChangeContent(Parent loader) {
+        Stage search = new Stage();
+        AnchorPane aPane = (AnchorPane) loader;
+        aPane.autosize();
+        content = CurrentContent.currentContent;
+        content.getChildren().clear();
+        //if(type==1)
+        //content.getChildren().add(aPane);
+        //else
+        content.getChildren().addAll(aPane);
+        
+    }
+
     
     
     /**

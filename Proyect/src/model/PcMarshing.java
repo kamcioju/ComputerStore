@@ -3,6 +3,7 @@ import es.upv.inf.Database;
 import es.upv.inf.Product;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -18,43 +19,41 @@ public class PcMarshing
 static
 {
     dbList.setPcList(new  ArrayList<PC>());
-      PC standardPC = new PC();
+        PC standardPC = new PC();
         standardPC.setPcName("StandardPc");
-        standardPC.setMotherboard(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0));
-        standardPC.setComputerCase(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0));
-        standardPC.setCpu(Database.getProductByCategory(Product.Category.CPU).get(0));
-        standardPC.setGpuList(Database.getProductByCategory(Product.Category.GPU).subList(0, 2));
-        standardPC.setHardDriveList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
-        standardPC.setRamList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
-        standardPC.setOptionalComponents(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(1));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.CPU).get(0));
+        standardPC.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(0, 2));
+        standardPC.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
+        standardPC.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
+        standardPC.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
         
         PC GamingPc = new PC();
         GamingPc.setPcName("GamingPc");
-        GamingPc.setMotherboard(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(2));
-        GamingPc.setCpu(Database.getProductByCategory(Product.Category.CPU).get(15));
-        GamingPc.setGpuList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
-        GamingPc.setHardDriveList(Database.getProductByCategory(Product.Category.HDD).subList(0, 1));
-        GamingPc.setRamList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
-        GamingPc.setOptionalComponents(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
-        GamingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
-        GamingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.FAN).get(6));
-        GamingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
-        GamingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(10));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));
+        GamingPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
+        GamingPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
+        GamingPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
+        GamingPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
         
         
         PC WorkingPc = new PC();
         WorkingPc.setPcName("WorkingPc");
-        WorkingPc.setMotherboard(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(10));
-        WorkingPc.setComputerCase(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
-        WorkingPc.setCpu(Database.getProductByCategory(Product.Category.CPU).get(15));
-        WorkingPc.setGpuList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
-        WorkingPc.setHardDriveList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
-        WorkingPc.setRamList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
-        WorkingPc.setOptionalComponents(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
-        WorkingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
-        WorkingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.FAN).get(6));
-        WorkingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
-        WorkingPc.addOptionalComponent(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
         
         
         dbList.getPcList().add(GamingPc);
@@ -71,26 +70,20 @@ static
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
 }
-	
-	/*public static void main(String[] args) throws JAXBException 
-	{
-		marshalingExample();
-		System.out.println("************************************************");
-		unMarshalingExample();
-	}
-*/
-
-	public static void unMarshalingExample() throws JAXBException {
-		JAXBContext jaxbContext = JAXBContext.newInstance(PC.class);
+		public static ListPCWrapper unMarshalingDefaultSet() throws JAXBException {
+		JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		PC pcs = (PC) jaxbUnmarshaller.unmarshal( new File("Database.xml") );
-		
-		
-        }
+		ListPCWrapper pcs = (ListPCWrapper) jaxbUnmarshaller.unmarshal( new File("PCDatabase.xml") );
+		//ListPCWrapper pcsList = new ListPCWrapper();
+                //for(int i=0; i< pcsList.getPcList().size(); i++)
+                //{
+                  //  pcsList.addPc();
+		//}
+                return pcs;
+	}
 
-	public static void marshalingExample() {
+	public static void marshalingDefaultSet() {
 		try {
             File file = new File("PCDatabase.xml");
             JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
@@ -102,4 +95,19 @@ static
             e.printStackTrace();
         }
 	}
+        
+        
+	public static void marshalingUserConfiguration() {
+		try {
+            File file = new File("PCDatabase.xml");
+            JAXBContext jaxbContext = JAXBContext.newInstance(ListPCWrapper.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            jaxbMarshaller.marshal(dbList, file);
+            jaxbMarshaller.marshal(dbList, System.out);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+	}
+        
 }

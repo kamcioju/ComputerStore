@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+
 import es.upv.inf.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,25 +12,53 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
 
 /**
  *
  * @author qjot
  */
 @XmlRootElement
-public class PC {    
-    private Product motherboard;
+public class PC {
+
+    @XmlElement(name = "Product")
+    private List<Product> productsList = new ArrayList<Product>();
+
+    //Constructors
+    public PC() {
+        this.totalPrice = 0.0;
+    }
+
+    public List<Product> GetProductsByCategory(Product.Category category) {
+        List<Product> tempList = new ArrayList<Product>();
+        for (Product product : productsList) {
+              if(product.getCategory().equals(category))
+                      {
+                          tempList.add(product);
+                      }
+        }
+        return tempList;
+    }
+
+    public List<Product> getProductList() {
+        return productsList;
+    }
+
+    public void setProductList(List<Product> Components) {
+        this.productsList = Components;
+    }
+
+    /*private Product motherboard;
     private Product cpu;
     private Product computerCase;
     private List<Product> ramList = new ArrayList<Product>();
     private List<Product> gpuList = new ArrayList<Product>();
     private List<Product> hardDriveList= new ArrayList<Product>();
     private List<Product> optionalComponents = new ArrayList<Product>();   
-    
+     */
     private double totalPrice;
-    private String pcName; 
+    private String pcName;
 
     public String getPcName() {
         return pcName;
@@ -37,85 +66,6 @@ public class PC {
 
     public void setPcName(String pcName) {
         this.pcName = pcName.toUpperCase();
-    }
-    //Constructors
-    public PC()
-    {
-        this.totalPrice = 0.0;
-    }
-    
-    //GETTERS & SETTERS
-    
-      public Product getMotherboard() {
-        return motherboard;
-    }
-
-    public void setMotherboard(Product motherboard) {
-        this.motherboard = motherboard;
-    }
-
-    public Product getCpu() {
-        return cpu;
-    }
-
-    public void setCpu(Product cpu) {
-        this.cpu = cpu;
-    }
-
-    public Product getComputerCase() {
-        return computerCase;
-    }
-
-    public void setComputerCase(Product computerCase) {
-        this.computerCase = computerCase;
-    }
-
-    public List<Product> getRamList() {
-        return ramList;
-    }
-
-    public void setRamList(List<Product> ramList) {
-        this.ramList = ramList;
-    }
-
-    public List<Product> getGpuList() {
-        return gpuList;
-    }
-
-    public void setGpuList(List<Product> gpuList) {
-        this.gpuList = gpuList;
-    }
-
-    public List<Product> getHardDriveList() {
-        return hardDriveList;
-    }
-
-    public void setHardDriveList(List<Product> hardDriveList) {
-        this.hardDriveList = hardDriveList;
-    }
-
-    public List<Product> getOptionalComponents() {
-        return optionalComponents;
-    }
-
-    public void setOptionalComponents(List<Product> optionalComponents) {
-        this.optionalComponents = optionalComponents;
-    }
-    
-    
-     public void addRam(Product ram) {
-        this.ramList.add(ram);
-    }
-
-    public void addGpu(Product gpu) {
-        this.gpuList.add(gpu);
-    }
-    public void addHardDrive(Product hardDrive) {
-        this.hardDriveList.add(hardDrive);
-    }
-
-    public void addOptionalComponent(Product optionalComponent) {
-        this.optionalComponents.add(optionalComponent);
     }
 
     public double getTotalPrice() {
@@ -126,4 +76,11 @@ public class PC {
         this.totalPrice = totalPrice;
     }
 
+    public void addProduct(Product product) {
+        this.productsList.add(product);
+    }
+
+    public void addProductList(List<Product> productList) {
+        this.productsList.addAll(productList);
+    }
 }

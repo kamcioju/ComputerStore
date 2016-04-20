@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsListFXMLController">
+<AnchorPane fx:id="content" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsListFXMLController">
    <children>
       <TableView fx:id="productsTableView" fixedCellSize="0.0" maxWidth="1200.0" prefHeight="400.0" prefWidth="500.0" style="-fx-padding: 0;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         
@@ -14,6 +14,7 @@
           <TableColumn fx:id="priceColumn" maxWidth="1.7976931348623157E308" minWidth="42.0" prefWidth="109.0" resizable="false" text="Price" />
             <TableColumn fx:id="quantityColumn" maxWidth="222.0" minWidth="136.0" prefWidth="155.0" text="Quantity" />
         </columns>
+
       </TableView>
       <Button fx:id="showButton" layoutX="501.0" layoutY="63.0" mnemonicParsing="false" onAction="#GoToProductDescription" text="Show Product" />
    </children>
