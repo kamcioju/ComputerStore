@@ -9,9 +9,11 @@ import controller.MainWindowFXMLController;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.CurrentContent;
 
@@ -25,7 +27,8 @@ public class Proyect extends Application {
     public void start(Stage stage) throws Exception {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainWindowFXML.fxml"));
-            Parent root = (Parent) loader.load();
+            AnchorPane root = (AnchorPane) loader.load();
+            
             AnchorPane aPane = (AnchorPane) root;
             MainWindowFXMLController mainController = loader.<MainWindowFXMLController>getController();
             mainController.InitController();
@@ -35,8 +38,15 @@ public class Proyect extends Application {
             e.printStackTrace();
         }
         
-        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLDocument.fxml"));
-        Scene scene = new Scene(root);        
+        BorderPane root = FXMLLoader.load(getClass().getResource("/view/FXMLDocument.fxml"));
+        Node temp= root.getChildren().get(2);
+         
+       AnchorPane cont = (AnchorPane) temp;
+        cont.getChildren().clear();
+        cont.getChildren().addAll(CurrentContent.currentContent.getChildren());
+        Parent p = root;
+        Scene scene = new Scene(p);     
+        CurrentContent.currentContent=cont;
         stage.setScene(scene);
         stage.show();
           

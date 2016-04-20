@@ -51,10 +51,10 @@ public class MainWindowFXMLController implements Initializable {
         Stage search = new Stage();
         AnchorPane aPane = (AnchorPane) loader;
         aPane.autosize(); 
-        contentMainView = CurrentContent.currentContent;
-        contentMainView.getChildren().clear();
-        //contentMainView.getChildren().addAll(aPane.getChildren());
-        contentMainView.getChildren().add(aPane);
+
+        CurrentContent.currentContent.getChildren().clear();
+        CurrentContent.currentContent.getChildren().addAll(aPane.getChildren());
+        
     
         }
     @FXML
