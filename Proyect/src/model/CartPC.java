@@ -60,7 +60,7 @@ public class CartPC {
         return false;
     }
     public static boolean CheckQuantiy(List<Product> productList, int quantity) {
-        if (productList.size() <= quantity) {
+        if (productList.size() < quantity) {
             return true;
         } else {
             return false;

@@ -72,7 +72,7 @@
                      <effect>
                         <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
                      </effect></Button>
-                  <Button fx:id="addToCardButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddToCard" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonBasket" text="Add to Card" textAlignment="CENTER">
+                  <Button fx:id="addToCardButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddToCart" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonBasket" text="Add to Cart" textAlignment="CENTER">
                      <effect>
                         <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
                      </effect></Button>

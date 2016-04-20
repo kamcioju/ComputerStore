@@ -21,6 +21,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -36,6 +38,7 @@ import org.controlsfx.control.RangeSlider;
 
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.CartPC;
 import model.CurrentContent;
 import model.PC;
 
@@ -170,8 +173,19 @@ public class ProductsListFXMLController implements Initializable {
         productsTableView.sort();
     }
 
-    @FXML
-    private void AddToCard(ActionEvent event) {
-    }
-
-}
+      @FXML
+    private void AddToCart(ActionEvent event) {        
+        selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
+        if(CartPC.addProduct(selectedProduct))
+        {
+            Alert alert = new Alert(AlertType.INFORMATION, "Product added to Your cart");
+            alert.showAndWait();
+        }
+        else
+        {
+              Alert alert = new Alert(AlertType.INFORMATION, "Sorry, You reached maximum of this product quantity.");
+              alert.showAndWait();
+        }
+        
+    }   
+} 		

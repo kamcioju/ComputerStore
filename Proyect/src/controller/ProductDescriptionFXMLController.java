@@ -13,10 +13,12 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import model.CartPC;
 
 /**
  * FXML Controller class
@@ -60,8 +62,19 @@ public class ProductDescriptionFXMLController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void AddToCart(ActionEvent event) {
-    }
-    
+     @FXML
+    private void AddToCart(ActionEvent event) {        
+       
+        if(CartPC.addProduct(product))
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Product added to Your cart");
+            alert.showAndWait();
+        }
+        else
+        {
+              Alert alert = new Alert(Alert.AlertType.INFORMATION, "Sorry, You reached maximum of this product quantity.");
+              alert.showAndWait();
+        }
+        
+    }   
 }
