@@ -60,7 +60,10 @@
                               <String fx:value="button" />
                            </styleClass>
                            <graphic>
-                              <ImageView fitHeight="117.0" fitWidth="178.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fitHeight="124.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/computer2.png" />
+                                 </image></ImageView>
                            </graphic>
                         </Button>
                      </children>
@@ -73,9 +76,9 @@
                               <String fx:value="button1" />
                            </styleClass>
                            <graphic>
-                              <ImageView fitHeight="124.0" fitWidth="151.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="119.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../img/computersandlaptops.png" />
+                                    <Image url="@/computer1.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -95,7 +98,7 @@
                                     <Rectangle2D />
                                  </viewport>
                                  <image>
-                                    <Image url="@../../img/Gaming-PC.jpg" />
+                                    <Image url="@/computer3.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -109,6 +112,13 @@
                               <String fx:value="MainMenu" />
                               <String fx:value="button" />
                            </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="111.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/computer4.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </Button>
                      </children>
                   </AnchorPane>
@@ -116,6 +126,6 @@
             </GridPane>
          </children>
       </HBox>
-      <VBox layoutX="160.0" layoutY="416.0" prefHeight="200.0" prefWidth="100.0" styleClass="grad2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="486.0" />
+      <VBox layoutX="160.0" layoutY="416.0" prefHeight="200.0" prefWidth="100.0" styleClass="grad2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="485.0" />
          </children>
 </AnchorPane>

@@ -48,6 +48,8 @@ public class Proyect extends Application {
         Scene scene = new Scene(p);     
         CurrentContent.currentContent=cont;
         stage.setScene(scene);
+        stage.setMinWidth(810);
+        stage.setMinHeight(620);
         stage.show();
           
     }
