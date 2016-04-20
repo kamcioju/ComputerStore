@@ -1,28 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
-
-<AnchorPane id="AnchorPane" fx:id="content" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="controller.ProductDescriptionFXMLController">
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="462.0" prefWidth="603.0" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductDescriptionFXMLController">
    <children>
-      <Label layoutX="30.0" layoutY="61.0" prefHeight="37.0" prefWidth="115.0" text="Company" textFill="#c32323" />
-      <Label layoutX="30.0" layoutY="98.0" prefHeight="37.0" prefWidth="115.0" text="Name" />
-      <Label layoutX="30.0" layoutY="135.0" prefHeight="37.0" prefWidth="115.0" text="Price" />
-      <Label layoutX="30.0" layoutY="172.0" prefHeight="37.0" prefWidth="115.0" text="Stock" />
-      <Label id="companyLabel" fx:id="companyLabel" layoutX="145.0" layoutY="61.0" prefHeight="37.0" prefWidth="115.0" />
-      <Label id="nameLabel" fx:id="nameLabel" layoutX="145.0" layoutY="98.0" prefHeight="37.0" prefWidth="115.0" />
-      <Label id="priceLabel" fx:id="priceLabel" layoutX="145.0" layoutY="135.0" prefHeight="37.0" prefWidth="115.0" />
-      <Label id="stockLabel" layoutX="145.0" layoutY="172.0" prefHeight="37.0" prefWidth="115.0" />
-   </children>
-     <children>
-      <Label layoutX="30.0" layoutY="61.0" prefHeight="37.0" prefWidth="115.0" text="Company" textFill="#c32323" />
-      <Label layoutX="30.0" layoutY="98.0" prefHeight="37.0" prefWidth="115.0" text="Name" />
-      <Label layoutX="30.0" layoutY="135.0" prefHeight="37.0" prefWidth="115.0" text="Price" />
-      <Label layoutX="30.0" layoutY="172.0" prefHeight="37.0" prefWidth="115.0" text="Stock" />
-      <Label id="asd" layoutX="145.0" layoutY="61.0" prefHeight="37.0" prefWidth="115.0" />
-      <Label id="qwe"  layoutX="145.0" layoutY="98.0" prefHeight="37.0" prefWidth="115.0" />
-      <Label id="dasd" layoutX="145.0" layoutY="135.0" prefHeight="37.0" prefWidth="115.0" />
-      <Label id="stockLabel" layoutX="145.0" layoutY="172.0" prefHeight="37.0" prefWidth="115.0" />
-   </children>
+      <Rectangle fill="#6d6e6f" height="37.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="Rectangle" width="38.0" />
+      <VBox layoutX="-6.0" prefHeight="445.0" prefWidth="606.0" style="-fx-background-radius: 20 0 0 0; -fx-border-radius: 20 0 0 0; -fx-border-color: black;" styleClass="grad" stylesheets="@MyStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="Company:" textFill="#c32323">
+               <VBox.margin>
+                  <Insets bottom="-7.0" top="14.0" />
+               </VBox.margin></Label>
+            <Label id="companyLabel" fx:id="companyLabel" prefHeight="37.0" prefWidth="430.0">
+               <styleClass>
+                  <String fx:value="grad2" />
+                  <String fx:value="DescLabel" />
+               </styleClass></Label>
+            <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="Description:">
+               <VBox.margin>
+                  <Insets bottom="-7.0" top="14.0" />
+               </VBox.margin></Label>
+            <Label id="nameLabel" fx:id="nameLabel" prefHeight="37.0" prefWidth="430.0">
+               <styleClass>
+                  <String fx:value="grad2" />
+                  <String fx:value="DescLabel" />
+               </styleClass></Label>
+            <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="Price:">
+               <VBox.margin>
+                  <Insets bottom="-7.0" top="14.0" />
+               </VBox.margin></Label>
+            <Label id="priceLabel" fx:id="priceLabel" prefHeight="37.0" prefWidth="430.0">
+               <styleClass>
+                  <String fx:value="grad2" />
+                  <String fx:value="DescLabel" />
+               </styleClass></Label>
+            <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="Stock:">
+               <VBox.margin>
+                  <Insets bottom="-7.0" top="14.0" />
+               </VBox.margin></Label>
+            <Label id="stockLabel" fx:id="stockLabel" prefHeight="37.0" prefWidth="430.0">
+               <styleClass>
+                  <String fx:value="grad2" />
+                  <String fx:value="DescLabel" />
+               </styleClass></Label>
+            <Button mnemonicParsing="false" onAction="#AddToCart" prefHeight="40.0" prefWidth="145.0" styleClass="buttonBasket" text="Add to cart">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin></Button>
+         </children>
+         <opaqueInsets>
+            <Insets left="30.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="50.0" top="30.0" />
+         </padding>
+      </VBox>
+      <ImageView fx:id="imageView" fitHeight="50.0" fitWidth="66.0" layoutX="405.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="405.0" AnchorPane.topAnchor="90.0">
+         <viewport>
+            <Rectangle2D height="200.0" width="200.0" />
+         </viewport>
+      </ImageView>
+   </children> 
 </AnchorPane>

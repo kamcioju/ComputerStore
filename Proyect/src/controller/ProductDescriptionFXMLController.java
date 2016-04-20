@@ -6,11 +6,17 @@
 package controller;
 
 import es.upv.inf.Product;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -22,18 +28,26 @@ public class ProductDescriptionFXMLController implements Initializable {
     @FXML private Label companyLabel;
     @FXML private Label nameLabel;
     @FXML private Label priceLabel;
-    @FXML private Label stockLabel;
     
     private Product product;
+    @FXML
+    private AnchorPane content;
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private Label stockLabel;
     
-    public void initController(Product _product)
+    public void initController(Product _product) throws FileNotFoundException
     {
+        //Image image = new Image("@/cpu.png");
+      //  imageView.setImage(image);
         this.product = _product;
-        companyLabel.setText(product.getDescription());
-//        companyLabel.setText(product.getDescription());
-  //      nameLabel.setText(product.getDescription());
-   //     priceLabel.setText(String.valueOf(product.getPrice()));
-    //    companyLabel.setText(String.valueOf(product.getStock()));
+        String arr[] = product.getDescription().split(" ", 2);
+
+        companyLabel.setText(arr[0]);
+         nameLabel.setText(arr[1]);
+         priceLabel.setText(String.valueOf(product.getPrice()));
+          stockLabel.setText(String.valueOf(product.getStock()));
         
         
     }
@@ -42,5 +56,9 @@ public class ProductDescriptionFXMLController implements Initializable {
         
         // TODO
     }    
+
+    @FXML
+    private void AddToCart(ActionEvent event) {
+    }
     
 }

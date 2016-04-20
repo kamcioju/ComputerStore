@@ -117,14 +117,15 @@ public class ProductsListFXMLController implements Initializable {
         Parent root = (Parent) loader.load();
         ProductDescriptionFXMLController appController = loader.<ProductDescriptionFXMLController>getController();
         ChangeContent(root);
-        
-        
-        FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
-        Parent mainRoot = (Parent) mainLoader.load();
-        FXMLDocumentController mainController = mainLoader.<FXMLDocumentController>getController();
-        content = mainController.GetContent();
-        ChangeContent(root);
-        //appController.GoToProductDescription(selectedProduct);
+        //System.out.println(root.toString());
+//        
+//        FXMLLoader mainLoader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
+//        Parent mainRoot = (Parent) mainLoader.load();
+//        FXMLDocumentController mainController = mainLoader.<FXMLDocumentController>getController();
+//        content = mainController.GetContent();
+//        // System.out.println(mainRoot.getChildrenUnmodifiable().toString());
+//        ChangeContent(root);
+//        //appController.GoToProductDescription(selectedProduct);
         
         
         //appController.GoToProductDescription(selectedProduct);
@@ -150,12 +151,25 @@ public class ProductsListFXMLController implements Initializable {
         Stage search = new Stage();
         AnchorPane aPane = (AnchorPane) loader;
         aPane.autosize();
-        content = CurrentContent.currentContent;
-        content.getChildren().clear();
+        //content = CurrentContent.currentContent;
+        
+        
         //if(type==1)
         //content.getChildren().add(aPane);
         //else
-        content.getChildren().addAll(aPane);
+        //if(aPane.getChildren().)
+        //    System.out.println("empty node");
+        //content.getChildren().addAll(aPane.getClip());
+       // System.out.println("Old");
+      
+        System.out.println(CurrentContent.currentContent.getChildren().toString());
+       
+        //System.out.println("inserted");
+        System.out.println(aPane.getChildren().toString());
+        CurrentContent.currentContent.getChildren().clear();
+        CurrentContent.currentContent.getChildren().addAll(aPane.getChildren());
+        System.out.println(CurrentContent.currentContent.getChildren().toString());
+
         
     }
 

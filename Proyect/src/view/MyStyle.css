@@ -39,7 +39,12 @@
 .table-view .column-header-background {
     -fx-background-color: transparent;
 }
-
+.DescLabel{
+      -fx-font-size: 14pt;
+      -fx-text-fill: white;
+      -fx-alignment: center-left;
+      -fx-opacity: 1;
+}
 .table-view .column-header, .table-view .filler {
     -fx-size: 35;
     -fx-border-width: 0 0 1 0;
@@ -75,7 +80,9 @@
 .split-pane {
     -fx-padding: 1 0 0 0;
 }
-
+.Rectangle{
+    -fx-fill:derive(#1d1d1d,20%);
+}
 .menu-bar {
     -fx-background-color: derive(#1d1d1d,20%);
 }
@@ -197,10 +204,20 @@
         linear-gradient( #1d1d1d 20%,  #999999 100%,#666666 80%, #00ffff 0%)
         ;
 }
+.grad2{
+   
+ -fx-background-color:
+       
+        linear-gradient(#cc6600, #0000ff),
+        linear-gradient( #ff0033 50%, #33ffff 100%, #ff6666 51%, #990099 0%),
+        linear-gradient( #1d1d1d 20%,  #999999 100%,#666666 80%, #00ffff 0%),
+        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%)
+        ;
+}
 /*
 ,,
-        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%)
-        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%)
+        
 */
 .button:pressed, .button:default:hover:pressed, .sliderButtonMenu >.titled-pane > .title:hover:pressed  {
     -fx-background-color:
