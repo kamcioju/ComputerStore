@@ -62,6 +62,7 @@ public class FXMLDocumentController implements Initializable {
         //if(type==1)
         content.getChildren().addAll(aPane.getChildren());
         CurrentContent.currentContent = content;
+        CurrentContent.type=2;
 //else
         //content.getChildren().addAll(aPane.getChildren());
     }
@@ -96,7 +97,6 @@ public class FXMLDocumentController implements Initializable {
                     pcController.initController(pcList.get(i));
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -168,6 +168,11 @@ public class FXMLDocumentController implements Initializable {
             pcList = PcMarshing.unMarshalingDefaultSet().getPcList();
         } catch (JAXBException e) {
             e.printStackTrace();
+        }
+        if(CurrentContent.type==1)
+        {
+            content.getChildren().clear();
+            content.getChildren().addAll(CurrentContent.currentContent);
         }
         
         Product motherboard = Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0);

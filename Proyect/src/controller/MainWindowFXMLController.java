@@ -46,50 +46,7 @@ public class MainWindowFXMLController implements Initializable {
             e.printStackTrace();
         }
         }
-    
-    @FXML
-    private void ShowDefaultPc(ActionEvent event) {
-        try {
-            Button btn = (Button) event.getSource();
-            String pcName = btn.getId();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/FXMLDocument.fxml"));
-            Parent root = (Parent) loader.load();
-            FXMLDocumentController pcController = loader.<FXMLDocumentController>getController();
-           // delete pcList= pcController.GetPcList();
-            pcController.ShowDefaultPc(pcName.toUpperCase());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        }
-    
-        public void ShowDefaultPc(String pcName)
-    {       
-        for (int i=0; i<pcList.size();i++)
-        {
-            String tempString = pcList.get(i).getPcName();
-            if(tempString.equals(pcName))
-            {
-                GoToPcDesc(pcList.get(i));
-                break;
-            }
-                  
-        }
-    }
-        
-          public void GoToPcDesc(PC pc)
-    {
-           try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
-            Parent root = (Parent) loader.load();
-            PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
-            ChangeContent(root);
-            pcController.initController(pc);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-    }
-               
+              
         private void ChangeContent(Parent loader) {
         Stage search = new Stage();
         AnchorPane aPane = (AnchorPane) loader;
@@ -100,24 +57,32 @@ public class MainWindowFXMLController implements Initializable {
         contentMainView.getChildren().add(aPane);
     
         }
-            @FXML
+    @FXML
     private void GoToPcDescription(ActionEvent event) {
         try {
-            String pcName = event.getSource().toString();
+            Button btn = (Button) event.getSource();
+            String pcName = btn.getId();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
             Parent root = (Parent) loader.load();
             PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
             ChangeContent(root);
-            pcController.initController(pcList.get(0));
+            for (int i = 0; i < pcList.size(); i++) {
+                String tempName = pcList.get(i).getPcName().toUpperCase();
+                if (tempName.equals(pcName)) {
+                    pcController.initController(pcList.get(i));
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        }
+    }
+
     
         
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }    
     
 }
