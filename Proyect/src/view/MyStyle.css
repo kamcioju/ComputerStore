@@ -64,6 +64,9 @@
     -fx-background-color: -fx-focus-color;
 }
 
+.productList{
+    -fx-font-size: 18px;
+}
 .split-pane:horizontal > .split-pane-divider {
     -fx-border-color: transparent #1d1d1d transparent #1d1d1d;
     -fx-background-color: transparent, derive(#1d1d1d,20%);
@@ -116,7 +119,7 @@
 }
 .buttonMenu {
     -fx-background-insets: 0,0,0,0;
-    -fx-padding: 0 0 0 10;
+    -fx-padding: 0 0 0 0;
     -fx-pref-width: 130;
     -fx-pref-height:40;
     -fx-max-height:50;
@@ -185,8 +188,20 @@
             linear-gradient(#83f590, #f7fcf8);
     -fx-text-fill: black;
 }
-
-
+.grad{
+   
+ -fx-background-color:
+       
+        linear-gradient(#cc6600, #0000ff),
+        linear-gradient( #ff0033 50%, #33ffff 100%, #ff6666 51%, #990099 0%),
+        linear-gradient( #1d1d1d 20%,  #999999 100%,#666666 80%, #00ffff 0%)
+        ;
+}
+/*
+,,
+        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%)
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%)
+*/
 .button:pressed, .button:default:hover:pressed, .sliderButtonMenu >.titled-pane > .title:hover:pressed  {
     -fx-background-color:
             rgba(0, 0, 0, 0.01),
@@ -203,7 +218,6 @@
             linear-gradient(#b2f5ab, #dcffd8);
     -fx-text-fill: #1d1d1d;
 }
-
 .button:focused {
     -fx-border-color: white, white;
     -fx-border-width: 1, 1;
@@ -211,7 +225,6 @@
     -fx-border-radius: 0, 0;
     -fx-border-insets: 1 1 1 1, 0;
 }
-
 .button:disabled, .button:default:disabled {
     -fx-opacity: 0.4;
     -fx-background-color: #1d1d1d;
