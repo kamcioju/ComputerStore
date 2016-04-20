@@ -15,6 +15,7 @@
       <Rectangle fill="#6d6e6f" height="37.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="Rectangle" width="38.0" />
       <VBox layoutX="-6.0" prefHeight="445.0" prefWidth="606.0" style="-fx-background-radius: 20 0 0 0; -fx-border-radius: 20 0 0 0; -fx-border-color: black;" styleClass="grad" stylesheets="@MyStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <Label fx:id="category" prefHeight="30.0" prefWidth="141.0" style="-fx-font-size: 26;" styleClass="DescLabel" />
             <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="Company:" textFill="#c32323">
                <VBox.margin>
                   <Insets bottom="-7.0" top="14.0" />
@@ -42,7 +43,7 @@
                   <String fx:value="grad2" />
                   <String fx:value="DescLabel" />
                </styleClass></Label>
-            <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="Stock:">
+            <Label prefHeight="37.0" prefWidth="115.0" styleClass="label-bright" text="In stock:">
                <VBox.margin>
                   <Insets bottom="-7.0" top="14.0" />
                </VBox.margin></Label>
