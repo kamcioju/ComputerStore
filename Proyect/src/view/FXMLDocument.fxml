@@ -142,9 +142,9 @@
       </AnchorPane>
    </top>
    <left>
-      <VBox alignment="CENTER_LEFT" depthTest="ENABLE" focusTraversable="true" style="-fx-fill-width: true;" styleClass="menu-bar" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER_LEFT" depthTest="ENABLE" focusTraversable="true" maxHeight="2000.0" style="-fx-fill-width: true;" styleClass="menu-bar" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="46.0" prefWidth="136.0" scaleY="1.06" style="-fx-font-size: 23; -fx-background-radius: 20 20 0 0; -fx-background-color: #191919; -fx-text-fill: white;" styleClass="tex" text="Our Shop" translateY="1.0" />
+            <Label alignment="CENTER" maxHeight="70.0" prefHeight="46.0" prefWidth="136.0" scaleY="1.06" style="-fx-font-size: 23; -fx-background-radius: 20 20 0 0; -fx-background-color: #191919; -fx-text-fill: white;" styleClass="tex" text="Our Shop" translateY="1.0" />
             <Label prefHeight="30.0" prefWidth="137.0" style="-fx-font-size: 20; -fx-background-radius: 1; -fx-background-color: grey;" styleClass="tex" text="Mandatory:" />
             <Button id="MOTHERBOARD" mnemonicParsing="false" onAction="#GoToProductsList" styleClass="buttonMenu" text="Motherboard" />
             <Button id="CPU" mnemonicParsing="false" onAction="#GoToProductsList" styleClass="buttonMenu" text="CPU" />
@@ -162,7 +162,7 @@
                                     <String fx:value="buttonMenu" />
                                  </styleClass>
                               </Button>
-                              <Button id="HDD_SDD" mnemonicParsing="false" onAction="#GoToProductsList" text="SSD">
+                              <Button id="HDD_SSD" mnemonicParsing="false" onAction="#GoToProductsList" text="SSD">
                                  <styleClass>
                                     <String fx:value="button" />
                                     <String fx:value="buttonMenu" />
