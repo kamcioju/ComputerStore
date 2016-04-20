@@ -52,6 +52,7 @@ public class FXMLDocumentController implements Initializable {
         aPane.autosize(); 
         content.getChildren().clear();
         content.getChildren().addAll(aPane.getChildren());
+        //content.getChildren().addAll(aPane);
     }
     
     public void ShowDefaultPc(String pcName)
@@ -138,12 +139,13 @@ public class FXMLDocumentController implements Initializable {
             // Button btn = (Button) event.getSource(); 
              //String categoryName = btn.getText();
              //String categoryName = btn.getId();
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainWindowFXML.fxml"));
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ProductDescriptionFXML.fxml"));
              Parent root = (Parent) loader.load();
-             //ProductDescriptionFXMLController productController = loader.<ProductDescriptionFXMLController>getController();
-            ChangeContent(root);
+             ProductDescriptionFXMLController productController = loader.<ProductDescriptionFXMLController>getController();
+            
+            this.ChangeContent(root);
             //product_list = Database.getProductByCategory(Product.Category.valueOf(categoryName.toUpperCase()));
-            //productController.initController(product);
+            productController.initController(product);
         } catch (IOException e) {
             e.printStackTrace();
         }

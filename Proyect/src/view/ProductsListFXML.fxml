@@ -12,14 +12,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane styleClass="productList" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsListFXMLController">
+<AnchorPane fx:id="content" styleClass="productList" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsListFXMLController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="509.0" styleClass="background" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField prefHeight="37.0" prefWidth="177.0" text="Description" />
-            <Button fx:id="showButton" mnemonicParsing="false" onAction="#GoToProductDescription" prefHeight="42.0" prefWidth="78.0" text="Search" />
+            <TextField fx:id="searchBox" prefHeight="38.0" prefWidth="177.0" promptText="Search" text="">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
             
-            <TitledPane alignment="CENTER" prefHeight="75.0" prefWidth="245.0" styleClass="table-view" stylesheets="@MyStyle.css" text="Set price range" textFill="WHITE">
+            <TitledPane alignment="CENTER" expanded="false" prefHeight="75.0" prefWidth="245.0" styleClass="table-view" stylesheets="@MyStyle.css" text="Set price range" textFill="WHITE">
                      <content>
                         <VBox fx:id="searchBar" maxWidth="431.0" minHeight="20.0" prefHeight="25.0" prefWidth="331.0" styleClass="menu-bar">
                            <opaqueInsets>
@@ -28,6 +30,12 @@
                            
                         </VBox>
                      </content>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
                   </TitledPane>
          
          
@@ -57,11 +65,11 @@
          <children>
             <ButtonBar buttonOrder="" minHeight="60.0" prefHeight="80.0" prefWidth="358.0">
                <buttons>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="132.0" style="-fx-min-width: 80;" text="Show detalis" textAlignment="CENTER" textOverrun="CLIP">
+                  <Button fx:id="showDetalisButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ShowDetalis" prefHeight="40.0" prefWidth="132.0" style="-fx-min-width: 80;" text="Show detalis" textAlignment="CENTER" textOverrun="CLIP">
                      <effect>
                         <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
                      </effect></Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonBasket" text="Add to Card" textAlignment="CENTER">
+                  <Button fx:id="addToCardButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#AddToCard" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonBasket" text="Add to Card" textAlignment="CENTER">
                      <effect>
                         <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
                      </effect></Button>
