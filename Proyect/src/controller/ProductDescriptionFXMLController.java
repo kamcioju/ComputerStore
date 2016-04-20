@@ -36,6 +36,8 @@ public class ProductDescriptionFXMLController implements Initializable {
     private ImageView imageView;
     @FXML
     private Label stockLabel;
+    @FXML
+    private Label category;
     
     public void initController(Product _product) throws FileNotFoundException
     {
@@ -47,8 +49,9 @@ public class ProductDescriptionFXMLController implements Initializable {
         companyLabel.setText(arr[0]);
          nameLabel.setText(arr[1]);
          priceLabel.setText(String.valueOf(product.getPrice()));
-          stockLabel.setText(String.valueOf(product.getStock()));
-        
+         stockLabel.setText(String.valueOf(product.getStock()));
+         String cat=product.getCategory().toString().replace('_', ' ');
+         category.setText(cat.substring(0, 1)+cat.toLowerCase().substring(1));
         
     }
     @Override

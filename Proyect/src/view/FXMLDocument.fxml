@@ -133,7 +133,11 @@
                   <DropShadow offsetX="-5.0" offsetY="3.0" radius="7.775" width="12.1" />
                </effect>
             </Button>
-            <Button fx:id="backToMain" layoutX="21.0" layoutY="29.0" mnemonicParsing="false" onAction="#GoToMainPage" text="MainPage" />
+            <Button fx:id="backToMain" layoutX="21.0" layoutY="29.0" mnemonicParsing="false" onAction="#GoToMainPage" prefHeight="80.0" prefWidth="80.0" text="MainPage" AnchorPane.leftAnchor="-8.0" AnchorPane.topAnchor="0.0">
+               <styleClass>
+                  <String fx:value="buttonRound" />
+                  <String fx:value="ipad-dark-grey" />
+               </styleClass></Button>
          </children>
       </AnchorPane>
    </top>

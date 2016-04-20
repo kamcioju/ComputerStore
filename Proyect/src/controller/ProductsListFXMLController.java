@@ -110,6 +110,14 @@ public class ProductsListFXMLController implements Initializable {
         productsTableView.getSortOrder().add(descriptionColumn);
         showDetalisButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());
         addToCardButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());
+       productsTableView.setOnMousePressed(new EventHandler<MouseEvent>() {
+    @Override 
+    public void handle(MouseEvent event) {
+        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+              ShowDetalis(null);  //null will fix everything!        
+        }
+    }
+});
     }
 
     @FXML

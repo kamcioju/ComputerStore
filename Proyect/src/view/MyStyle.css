@@ -40,10 +40,10 @@
     -fx-background-color: transparent;
 }
 .DescLabel{
-      -fx-font-size: 14pt;
-      -fx-text-fill: white;
-      -fx-alignment: center-left;
-      -fx-opacity: 1;
+    -fx-font-size: 14pt;
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
 }
 .table-view .column-header, .table-view .filler {
     -fx-size: 35;
@@ -119,7 +119,7 @@
     -fx-font-size: 14px;
     -fx-min-width:15;
     -fx-min-height:18;
-    
+
 }
 .button > .image{
     -fx-background-color:transparent
@@ -133,7 +133,7 @@
     -fx-min-height:18;
     -fx-font-size: 15px;
     -fx-background-color: null;
-    
+
 }
 .sliderButtonMenu {
     -fx-text-fill: white;
@@ -146,20 +146,20 @@
     -fx-font-size: 14px;
     -fx-pref-height:40;
     -fx-max-height:50;
-   -fx-min-height:18;
+    -fx-min-height:18;
 }
 .sliderButtonMenu >.titled-pane > *.content {
     -fx-background-color:
-    -fx-box-border,#000000;
+        -fx-box-border,#000000;
     -fx-padding: -0.5em;
-    
+
 }
 .sliderButtonMenu >.titled-pane > .title:hover {
     -fx-background-color:
-            rgba(0, 0, 0, 0.01),
-            linear-gradient(#539eff, #2f4b8f),
-            linear-gradient(#5477df, #263e75),
-            linear-gradient(#2f4588, #44aabe);
+        rgba(0, 0, 0, 0.01),
+        linear-gradient(#539eff, #2f4b8f),
+        linear-gradient(#5477df, #263e75),
+        linear-gradient(#2f4588, #44aabe);
     -fx-min-height:18;
 }
 .buttonMenuSmall {
@@ -182,32 +182,32 @@
 
 .button:hover {
     -fx-background-color:
-            rgba(0, 0, 0, 0.01),
-            linear-gradient(#539eff, #2f4b8f),
-            linear-gradient(#5477df, #263e75),
-            linear-gradient(#2f4588, #44aabe);
+        rgba(0, 0, 0, 0.01),
+        linear-gradient(#539eff, #2f4b8f),
+        linear-gradient(#5477df, #263e75),
+        linear-gradient(#2f4588, #44aabe);
 }
 .buttonBasket:hover{
     -fx-background-color:
-            #7ebcea,
-            linear-gradient(#06b70e, #0a8f00),
-            linear-gradient(#02b751, #0a5916),
-            linear-gradient(#83f590, #f7fcf8);
+        #7ebcea,
+        linear-gradient(#06b70e, #0a8f00),
+        linear-gradient(#02b751, #0a5916),
+        linear-gradient(#83f590, #f7fcf8);
     -fx-text-fill: black;
 }
 .grad{
-   
- -fx-background-color:
-       
+
+    -fx-background-color:
+
         linear-gradient(#cc6600, #0000ff),
         linear-gradient( #ff0033 50%, #33ffff 100%, #ff6666 51%, #990099 0%),
         linear-gradient( #1d1d1d 20%,  #999999 100%,#666666 80%, #00ffff 0%)
         ;
 }
 .grad2{
-   
- -fx-background-color:
-       
+
+    -fx-background-color:
+
         linear-gradient(#cc6600, #0000ff),
         linear-gradient( #ff0033 50%, #33ffff 100%, #ff6666 51%, #990099 0%),
         linear-gradient( #1d1d1d 20%,  #999999 100%,#666666 80%, #00ffff 0%),
@@ -221,24 +221,24 @@
 */
 .button:pressed, .button:default:hover:pressed, .sliderButtonMenu >.titled-pane > .title:hover:pressed  {
     -fx-background-color:
-            rgba(0, 0, 0, 0.01),
-            linear-gradient(#539eff, #2f4b8f),
-            linear-gradient(#5477df, #263e75),
-            linear-gradient(#afbdec, #9becff);
-  -fx-text-fill: #1d1d1d;
+        rgba(0, 0, 0, 0.01),
+        linear-gradient(#539eff, #2f4b8f),
+        linear-gradient(#5477df, #263e75),
+        linear-gradient(#afbdec, #9becff);
+    -fx-text-fill: #1d1d1d;
 }
 .buttonBasket:pressed {
     -fx-background-color:
-            #7ebcea,
-            linear-gradient(#06b70e, #0a8f00),
-            linear-gradient(#02b751, #0a5916),
-            linear-gradient(#b2f5ab, #dcffd8);
+        #7ebcea,
+        linear-gradient(#06b70e, #0a8f00),
+        linear-gradient(#02b751, #0a5916),
+        linear-gradient(#b2f5ab, #dcffd8);
     -fx-text-fill: #1d1d1d;
 }
 .button:focused {
     -fx-border-color: white, white;
     -fx-border-width: 1, 1;
- 
+
     -fx-border-radius: 0, 0;
     -fx-border-insets: 1 1 1 1, 0;
 }
@@ -251,12 +251,38 @@
 .button:default {
     -fx-background-color: -fx-focus-color;
     -fx-text-fill: #ffffff;
-    
+
 }
 
-.button:default:hover{
-     -fx-background-color: derive(-fx-focus-color,30%);
- }
+.button:default:hover, .ipad-dark-grey:focused {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+.buttonRound {
+    -fx-background-radius: 0 0 20 0;     
+    -fx-min-width: 30px; 
+    -fx-min-height: 30px; 
+    -fx-max-width: 200px; 
+    -fx-max-height: 2000px;
+}
+
+.ipad-dark-grey {
+    -fx-background-color: 
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%),
+        linear-gradient(#8a8a8a 0%, #6b6a6b 20%, #343534 80%, #262626 100%),
+        linear-gradient(#777777 0%, #606060 50%, #505250 51%, #2a2b2a 100%);
+    -fx-background-insets: 0,1,4,5,6;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+}
+.ipad-dark-grey > .Text {
+    -fx-effect: dropshadow( one-pass-box , black , 0, 0.0 , 0 , -1 );
+}
+
+
 .separator {
     -fx-skin: "com.sun.javafx.scene.control.skin.SeparatorSkin";
 }
