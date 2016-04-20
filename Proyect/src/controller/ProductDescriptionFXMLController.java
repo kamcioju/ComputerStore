@@ -65,16 +65,10 @@ public class ProductDescriptionFXMLController implements Initializable {
      @FXML
     private void AddToCart(ActionEvent event) {        
        
-        if(CartPC.addProduct(product))
-        {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Product added to Your cart");
-            alert.showAndWait();
-        }
-        else
-        {
-              Alert alert = new Alert(Alert.AlertType.INFORMATION, "Sorry, You reached maximum of this product quantity.");
-              alert.showAndWait();
-        }
+        String message = CartPC.addProduct(product);
         
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, message);
+            alert.showAndWait();
+               
     }   
 }

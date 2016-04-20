@@ -176,16 +176,10 @@ public class ProductsListFXMLController implements Initializable {
       @FXML
     private void AddToCart(ActionEvent event) {        
         selectedProduct = productsTableView.getSelectionModel().getSelectedItem();
-        if(CartPC.addProduct(selectedProduct))
-        {
-            Alert alert = new Alert(AlertType.INFORMATION, "Product added to Your cart");
+        String message = CartPC.addProduct(selectedProduct);
+        
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, message);
             alert.showAndWait();
-        }
-        else
-        {
-              Alert alert = new Alert(AlertType.INFORMATION, "Sorry, You reached maximum of this product quantity.");
-              alert.showAndWait();
-        }
         
     }   
 } 		
