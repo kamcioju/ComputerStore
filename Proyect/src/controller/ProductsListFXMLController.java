@@ -134,22 +134,10 @@ public class ProductsListFXMLController implements Initializable {
         }
     }
 
-    private void ChangeContent(AnchorPane loader) {
-        Stage search = new Stage();
-
-        AnchorPane aPane = (AnchorPane) loader;
-        aPane.autosize();
-        this.content.getChildren().clear();
-        content.getChildren().clear();
-        this.content.setScaleY(1000);
-
-    }
-
     public void ChangeContent(Parent loader) {
         AnchorPane aPane = (AnchorPane) loader;
         CurrentContent.currentContent.getChildren().clear();
         CurrentContent.currentContent.getChildren().addAll(aPane.getChildren());
-
     }
 
     /**

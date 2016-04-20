@@ -1,18 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="content" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PcDescriptionFXMLController">
+<AnchorPane fx:id="content" prefHeight="540.0" prefWidth="628.0" styleClass="productList" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PcDescriptionFXMLController">
    <children>
-      <TableView fx:id="productsTableView" layoutX="14.0" layoutY="14.0" prefHeight="325.0" prefWidth="487.0">
-        <columns>
-          <TableColumn fx:id="categoryColumn" prefWidth="105.0" text="Category" />
-            <TableColumn fx:id="descriptionColumn" prefWidth="105.0" text="Description" />
-          <TableColumn fx:id="priceColumn" prefWidth="127.0" text="Price" />
-            <TableColumn fx:id="quantityColumn" prefWidth="127.0" text="Quantity" />
-        </columns>
+      <Rectangle fill="DODGERBLUE" height="26.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="Rectangle" width="24.0" />
+      <AnchorPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="99.1" prefWidth="628.0" style="-fx-background-radius: 20 0 0 0; -fx-border-radius: 20 0 0 0; -fx-border-color: black;" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label style="-fx-font-size: 30;" styleClass="DescLabel" text="Client cart">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <VBox alignment="CENTER_LEFT" spacing="1.0" styleClass="menu">
+                     <children>
+                        <Label style="-fx-font-size: 13;" text="Save your cart" />
+                        <HBox>
+                           <children>
+                              <TextField fx:id="searchBox" prefHeight="37.0" prefWidth="176.0" promptText="Your Configuration name" text="">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextField>
+                              <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="74.0" text="Save" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </VBox>
+               
+               
+               
+               
+               
+               
+               
+               
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <Button alignment="BOTTOM_CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="148.0" textAlignment="CENTER" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label style="-fx-font-size: 17;" styleClass="DescLabel" text="Print cart">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fitHeight="44.0" fitWidth="43.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@/printer.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="productsTableView" fixedCellSize="30.0" layoutY="50.0" maxWidth="1200.0" prefHeight="400.0" prefWidth="479.0" style="-fx-padding: 0;" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+        
+                <columns>
+          <TableColumn fx:id="categoryColumn" maxWidth="800.0" minWidth="120.0" prefWidth="162.0" resizable="false" text="Category" />
+          <TableColumn fx:id="descriptionColumn" maxWidth="500.0" minWidth="42.0" prefWidth="198.0" resizable="false" text="Description" />
+            <TableColumn fx:id="priceColumn" maxWidth="300.0" minWidth="111.0" prefWidth="112.0" text="Price" />
+         <TableColumn fx:id="quantityColumn" prefWidth="127.0" text="Quantity" />
+                </columns>
+
       </TableView>
+      <HBox alignment="CENTER" layoutX="1.0" layoutY="450.0" maxHeight="61.0" minHeight="61.0" prefHeight="61.0" prefWidth="509.0" styleClass="grad" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ButtonBar buttonOrder="" minHeight="60.0" prefHeight="80.0" prefWidth="358.0">
+               <buttons>
+                  <Button fx:id="addToCardButton1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#RemoveFromCard" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonRemove" text="Remove" textAlignment="CENTER">
+                     <effect>
+                        <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="showDetalisButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#ShowDetalis" prefHeight="40.0" prefWidth="132.0" style="-fx-min-width: 80;" text="Show detalis" textAlignment="CENTER" textOverrun="CLIP">
+                     <effect>
+                        <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
+                     </effect></Button>
+               </buttons>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ButtonBar>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

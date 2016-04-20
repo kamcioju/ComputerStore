@@ -180,6 +180,17 @@
 }
 
 
+.buttonRemove{
+    -fx-background-color: 
+        #7ebcea,
+        linear-gradient(#cc0000, #ff6666),
+        linear-gradient(#cc0033, #660033),
+        linear-gradient(#ff0000, #660000);
+    -fx-text-fill: white;
+}
+
+
+
 .button:hover {
     -fx-background-color:
         rgba(0, 0, 0, 0.01),
@@ -194,6 +205,14 @@
         linear-gradient(#02b751, #0a5916),
         linear-gradient(#83f590, #f7fcf8);
     -fx-text-fill: black;
+}
+.buttonRemove:hover, .buttonRemove:default:hover:pressed {
+    -fx-background-color: 
+        #7ebcea,
+        linear-gradient(#cc0000, #ff6666),
+        linear-gradient(#cc0033, #660033),
+        linear-gradient(#ff3333, #ff9999);
+    -fx-text-fill: white;
 }
 .grad{
 
