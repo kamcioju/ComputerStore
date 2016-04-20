@@ -169,14 +169,6 @@ public class FXMLDocumentController implements Initializable {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-        if(CurrentContent.type==1)
-        {
-            
-           //content.getChildren().clear();
-            //content.getChildren().addAll(CurrentContent.currentContent);
-            
-        }
-        
         Product motherboard = Database.getProductByCategory(Product.Category.MOTHERBOARD).get(0);
         CartPC.currentPC.setPcName("Maturbator");
         if(CartPC.addProduct(motherboard))
