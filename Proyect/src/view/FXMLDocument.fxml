@@ -34,9 +34,9 @@
                </fill>
             </Rectangle>
             <Label alignment="CENTER" layoutX="162.0" layoutY="-2.0" prefHeight="82.0" prefWidth="120.0" style="-fx-font-size: 23; -fx-background-color: #191919; -fx-text-fill: white; -fx-background-radius: 30 0 0 30;" styleClass="MainTitle" text="Shoping Cart" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="593.0" AnchorPane.topAnchor="-2.0" />
-            <ButtonBar buttonMinWidth="60.0" layoutX="70.0" minWidth="300.0" prefHeight="74.0" prefWidth="490.0" style="-fx-background-color: #1d1d1d;" styleClass="rectangle" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="0.0">
+            <ButtonBar buttonMinWidth="60.0" layoutX="70.0" minWidth="300.0" prefHeight="74.0" prefWidth="490.0" style="-fx-background-color: #1d1d1d;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="0.0">
               <buttons>
-                <Button id="MOTHERBOARD" fx:id="cardButton1" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                <Button id="MOTHERBOARD" fx:id="cardButton1" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" styleClass="buttonup" textAlignment="CENTER">
                      <graphic>
                         <VBox alignment="TOP_CENTER">
                            <children>
@@ -49,7 +49,7 @@
                            </children>
                         </VBox>
                      </graphic></Button>
-                  <Button id="CPU" fx:id="cardButton2" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                  <Button id="CPU" fx:id="cardButton2" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" styleClass="buttonup" textAlignment="CENTER">
                      <graphic>
                         <VBox alignment="TOP_CENTER">
                            <children>
@@ -63,7 +63,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button id="RAM" fx:id="cardButton3" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                  <Button id="RAM" fx:id="cardButton3" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" styleClass="buttonup" textAlignment="CENTER">
                      <graphic>
                         <VBox alignment="TOP_CENTER" style="-fx-background-color: transparent;">
                            <children>
@@ -77,7 +77,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button id="GPU" fx:id="cardButton4" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                  <Button id="GPU" fx:id="cardButton4" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" styleClass="buttonup" textAlignment="CENTER">
                      <graphic>
                         <VBox alignment="TOP_CENTER">
                            <children>
@@ -91,7 +91,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button id="HDD" fx:id="cardButton5" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                  <Button id="HDD" fx:id="cardButton5" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" styleClass="buttonup" textAlignment="CENTER">
                      <graphic>
                         <VBox alignment="TOP_CENTER">
                            <children>
@@ -105,7 +105,7 @@
                         </VBox>
                      </graphic>
                   </Button>
-                  <Button id="CASE" fx:id="cardButton6" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" textAlignment="CENTER">
+                  <Button id="CASE" fx:id="cardButton6" alignment="BOTTOM_CENTER" disable="true" mnemonicParsing="false" prefHeight="64.0" prefWidth="70.0" styleClass="buttonup" textAlignment="CENTER">
                      <graphic>
                         <VBox alignment="TOP_CENTER">
                            <children>
@@ -120,6 +120,10 @@
                      </graphic>
                   </Button>
               </buttons>
+               <styleClass>
+                  <String fx:value="rectangle" />
+                  <String fx:value="buttonup" />
+               </styleClass>
             </ButtonBar>
             <Button layoutX="614.0" layoutY="9.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="64.0" prefWidth="105.0" styleClass="buttonBasket" text=" Full Cart" wrapText="true" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="9.0">
                <graphic>

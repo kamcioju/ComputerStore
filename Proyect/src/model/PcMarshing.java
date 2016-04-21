@@ -32,6 +32,7 @@ public class PcMarshing {
         standardPC.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(0, 2));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
+        standardPC.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
 
         PC GamingPc = new PC();
@@ -60,9 +61,23 @@ public class PcMarshing {
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
 
+        PC MusicPc = new PC();
+        MusicPc.setPcName("MusicPc");
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));
+        MusicPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
+        MusicPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
+        MusicPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
+        MusicPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
+
         dbList.getPcList().add(GamingPc);
         dbList.getPcList().add(WorkingPc);
         dbList.getPcList().add(standardPC);
+        dbList.getPcList().add(MusicPc);
 
         try {
             File file = new File("PCDatabase.xml");
@@ -113,7 +128,7 @@ public class PcMarshing {
             try {
                 String filename = "userConfigurations.txt";
                 FileWriter fw = new FileWriter(filename, true); //the true will append the new data
-                fw.write(System.getProperty("line.separator")+configurationName);//appends the string to the file
+                fw.write(System.getProperty("line.separator") + configurationName);//appends the string to the file
                 fw.close();
             } catch (IOException ioe) {
                 System.err.println("IOException: " + ioe.getMessage());
@@ -156,31 +171,25 @@ public class PcMarshing {
                 if (!currentRequired.contains(productCat)) {
                     currentRequired.add(productCat);
                     requiredParts++;
-                    if(productCat=="HDD"||productCat=="HDD_SSD")
-                    {
+                    if (productCat == "HDD" || productCat == "HDD_SSD") {
                         hardDrives++;
                     }
                 }
             }
         }
 
-          for (Product product : pc.getProductList()) {
+        for (Product product : pc.getProductList()) {
             String productCat = product.getCategory().toString();
             if (optionalList.contains(productCat)) {
                 optionalParts++;
             }
         }
-        
-        if((requiredParts<6 && hardDrives<2) ||(requiredParts<7 && hardDrives<3))
-        {
+
+        if ((requiredParts < 6 && hardDrives < 2) || (requiredParts < 7 && hardDrives < 3)) {
             return 1; //You have not enought mandatory parts
-        }
-        else if(optionalParts<1)
-        {
+        } else if (optionalParts < 1) {
             return 2; // Warning, 0 optional parts
-        }
-        else
-        {
+        } else {
             return 3; //everything is OK, GO HOME
         }
     }

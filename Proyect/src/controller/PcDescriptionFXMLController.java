@@ -64,21 +64,32 @@ public class PcDescriptionFXMLController implements Initializable {
     @FXML
     private AnchorPane content;
     @FXML
-    private TextField searchBox;
-    @FXML
-    private Button addToCardButton1;
+    private Label totalPrice;
 
     public void initController(PC pc) {
         if (pc != null) {
             this.currentPc = pc;
+           CurrentContent.button1.set(false);
+           CurrentContent.button2.set(false);
+           CurrentContent.button3.set(false);
+           CurrentContent.button4.set(false);
+           CurrentContent.button5.set(false);
+           CurrentContent.button6.set(false);
+            
         } else {
             this.currentPc = CartPC.currentPC;
         }
         if (!currentPc.getPcName().isEmpty()) {
             configurationField.setText(currentPc.getPcName());
         }
-
+        
         addComponentsToTableView(product_list);
+        double price=0;
+        for(Product p :product_list)
+        {
+            price+=p.getPrice();
+        }
+        totalPrice.setText(""+price);
         productsTableView.getSortOrder().add(descriptionColumn);
         showDetalisButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());
         removeFromCartButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());
@@ -167,6 +178,12 @@ public class PcDescriptionFXMLController implements Initializable {
         alert.showAndWait();
         product_list.remove(selectedProduct);
         configurationField.setText("");
+         double price=0;
+        for(Product p :product_list)
+        {
+            price+=p.getPrice();
+        }
+         totalPrice.setText(""+price);
     }
 
     @FXML

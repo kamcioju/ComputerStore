@@ -94,6 +94,12 @@ public class MainWindowFXMLController implements Initializable {
     @FXML
     private void GoToShop(ActionEvent event) {
         try {
+             CurrentContent.button1.set(true);
+           CurrentContent.button2.set(true);
+           CurrentContent.button3.set(true);
+           CurrentContent.button4.set(true);
+           CurrentContent.button5.set(true);
+           CurrentContent.button6.set(true);
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ProductsListFXML.fxml"));
             Parent root = (Parent) loader.load();

@@ -112,6 +112,28 @@ public class CartPC {
         List<Product> productCategoryList = currentPC.getProductList();
         currentPC.getProductList().remove(product);
         currentPC.setPcName("");
+         switch (product.getCategory().toString()) {
+                case "MOTHERBOARD": 
+                    CurrentContent.button1.set(true);
+                    break;
+                case "CPU":  
+                    CurrentContent.button2.set(true);
+                    break;
+                case "RAM":   
+                    CurrentContent.button3.set(true);
+                    break;
+                case "GPU":    
+                    CurrentContent.button4.set(true);
+                    break;
+                case "HDD":
+                case "HDD_SSD": 
+                    CurrentContent.button5.set(true);
+                    break;
+                case "CASE":
+                    CurrentContent.button6.set(true);
+                    break;
+            }
+            
         return "Product deleted!";
     }
 

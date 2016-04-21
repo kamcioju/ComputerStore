@@ -109,6 +109,15 @@
                   <Insets />
                </HBox.margin>
             </ButtonBar>
+            <Label styleClass="DescLabel" stylesheets="@MyStyle.css" text="Total Price:">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></Label>
+            <Label fx:id="totalPrice" styleClass="DescLabel" text=".">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
          </children>
       </HBox>
    </children>
