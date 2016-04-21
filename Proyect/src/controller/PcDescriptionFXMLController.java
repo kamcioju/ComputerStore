@@ -29,6 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import static jdk.nashorn.internal.objects.NativeMath.round;
 import model.CartPC;
 import model.CurrentContent;
 import model.PC;
@@ -89,7 +90,7 @@ public class PcDescriptionFXMLController implements Initializable {
         {
             price+=p.getPrice();
         }
-        totalPrice.setText(""+price);
+        totalPrice.setText(String.format("%.2f", price));
         productsTableView.getSortOrder().add(descriptionColumn);
         showDetalisButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());
         removeFromCartButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());
@@ -183,7 +184,7 @@ public class PcDescriptionFXMLController implements Initializable {
         {
             price+=p.getPrice();
         }
-         totalPrice.setText(""+price);
+         totalPrice.setText(String.format("%.2f", price));
     }
 
     @FXML

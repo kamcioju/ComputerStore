@@ -388,6 +388,12 @@
             <category>RAM</category>
         </Product>
         <Product>
+            <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>34.05</price>
+            <stock>108</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
             <description>raton logitech m175 id bulk</description>
             <price>14.55</price>
             <stock>17</stock>
@@ -435,6 +441,12 @@
             <price>59.75</price>
             <stock>70</stock>
             <category>HDD</category>
+        </productList>
+        <productList>
+            <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>34.05</price>
+            <stock>108</stock>
+            <category>RAM</category>
         </productList>
         <productList>
             <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
