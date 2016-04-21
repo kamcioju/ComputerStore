@@ -45,13 +45,25 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private AnchorPane content;
-    @FXML
-    private ListView ramListView;
     private ObservableList<String> data = null;
     private List<PC> pcList = new ArrayList<PC>();
     private List<Product> product_list = new ArrayList<>();
     private PC defaultPc;
     public static PC currentPc;
+    @FXML
+    private Button cardButton1;
+    @FXML
+    private Button cardButton2;
+    @FXML
+    private Button cardButton3;
+    @FXML
+    private Button cardButton4;
+    @FXML
+    private Button cardButton5;
+    @FXML
+    private Button cardButton6;
+    @FXML
+    private Button backToMain;
     
     public void ChangeContent(Parent loader) {
         Stage search = new Stage();
@@ -170,5 +182,25 @@ public class FXMLDocumentController implements Initializable {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
+//        
+                   cardButton1.disableProperty().bind(CurrentContent.button1);
+                      cardButton2.disableProperty().bind(CurrentContent.button2);
+                       cardButton3.disableProperty().bind(CurrentContent.button3);
+                    cardButton4.disableProperty().bind(CurrentContent.button4);
+               cardButton5.disableProperty().bind(CurrentContent.button5);
+               cardButton6.disableProperty().bind(CurrentContent.button6);
+                
+
+//       
+//          addToCardButton.disableProperty().bind(listButton.getSelectionModel().selectedItemProperty().isNull());
+//           listButton.add(cardButton1);
+//           listButton.add(cardButton2);
+//           listButton.add(cardButton3);
+//           listButton.add(cardButton4);
+//           listButton.add(cardButton5);
+//           listButton.add(cardButton6);
+//        
+               
     }
+   
 }
