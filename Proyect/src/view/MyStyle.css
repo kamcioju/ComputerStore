@@ -246,6 +246,7 @@
         linear-gradient(#afbdec, #9becff);
     -fx-text-fill: #1d1d1d;
 }
+
 .buttonBasket:pressed {
     -fx-background-color:
         #7ebcea,
@@ -330,4 +331,19 @@
 .MainMenu >.image-view{
     -fx-max-width: 10px; 
     -fx-max-height: 10px;
+}
+.buttonup:hover ,.buttonup:pressed {
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#539eff, #2f4b8f),
+        linear-gradient(#5477df, #263e75),
+        linear-gradient(#395cab, #0c185c);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 0 0 0 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-min-width:15;
+    -fx-min-height:18;
+
 }

@@ -71,6 +71,13 @@ public class PcDescriptionFXMLController implements Initializable {
     public void initController(PC pc) {
         if (pc != null) {
             this.currentPc = pc;
+           CurrentContent.button1.set(false);
+           CurrentContent.button2.set(false);
+           CurrentContent.button3.set(false);
+           CurrentContent.button4.set(false);
+           CurrentContent.button5.set(false);
+           CurrentContent.button6.set(false);
+            
         } else {
             this.currentPc = CartPC.currentPC;
         }

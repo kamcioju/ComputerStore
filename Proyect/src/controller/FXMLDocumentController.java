@@ -179,7 +179,15 @@ public void GoToPcDesc(PC pc) {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-//        
+//       
+cardButton1.disarm();
+cardButton2.disarm();
+cardButton3.disarm();
+cardButton4.disarm();
+cardButton5.disarm();
+cardButton6.disarm();
+
+
                    cardButton1.disableProperty().bind(CurrentContent.button1);
                       cardButton2.disableProperty().bind(CurrentContent.button2);
                        cardButton3.disableProperty().bind(CurrentContent.button3);
