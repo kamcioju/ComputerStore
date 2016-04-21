@@ -29,11 +29,17 @@ public class PcMarshing {
         standardPC.setPcName("StandardPc");
         standardPC.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(1));
         standardPC.addProduct(Database.getProductByCategory(Product.Category.CPU).get(0));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.CASE).get(3));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(0, 2));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(0, 2));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(0, 1));
         standardPC.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 2));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(3));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.KEYBOARD).get(5));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.FAN).get(3));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(8));
+        standardPC.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(2));
 
         PC GamingPc = new PC();
         GamingPc.setPcName("GamingPc");
@@ -42,6 +48,7 @@ public class PcMarshing {
         GamingPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
         GamingPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
         GamingPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
+        GamingPc.addProduct(Database.getProductByCategory(Product.Category.CASE).get(3));
         GamingPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
         GamingPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
         GamingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
@@ -52,27 +59,29 @@ public class PcMarshing {
         WorkingPc.setPcName("WorkingPc");
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.CASE).get(6));
         WorkingPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
         WorkingPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
         WorkingPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
         WorkingPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
-        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
-        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
-        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(8));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(11));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(8));
 
         PC MusicPc = new PC();
         MusicPc.setPcName("MusicPc");
         MusicPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
-        MusicPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));        
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.CASE).get(15));
         MusicPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
-        MusicPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
-        MusicPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(2, 5));
+        MusicPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(6, 8));
+        MusicPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(4, 6));
         MusicPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
-        MusicPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(5));
-        MusicPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(6));
-        MusicPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(13));
-        MusicPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(3));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(6));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(3));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(7));
+        MusicPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(7));
 
         dbList.getPcList().add(GamingPc);
         dbList.getPcList().add(WorkingPc);

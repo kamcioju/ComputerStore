@@ -56,6 +56,12 @@
             <category>RAM</category>
         </Product>
         <Product>
+            <description>unyka caja micro atx 500w uk3807 negra</description>
+            <price>24.96</price>
+            <stock>14</stock>
+            <category>CASE</category>
+        </Product>
+        <Product>
             <description>raton logitech m175 id bulk</description>
             <price>14.55</price>
             <stock>17</stock>
@@ -141,6 +147,12 @@
             <category>RAM</category>
         </productList>
         <productList>
+            <description>unyka caja micro atx 500w uk3807 negra</description>
+            <price>24.96</price>
+            <stock>14</stock>
+            <category>CASE</category>
+        </productList>
+        <productList>
             <description>raton logitech m175 id bulk</description>
             <price>14.55</price>
             <stock>17</stock>
@@ -184,6 +196,12 @@
             <price>69.34</price>
             <stock>13</stock>
             <category>CPU</category>
+        </Product>
+        <Product>
+            <description>nox atx coolbay sx sin fuente audiohd usb3.0 negra</description>
+            <price>35.62</price>
+            <stock>10</stock>
+            <category>CASE</category>
         </Product>
         <Product>
             <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
@@ -240,21 +258,21 @@
             <category>SPEAKER</category>
         </Product>
         <Product>
-            <description>nox ventilador coolfan 1200rpm 12cm + 4 led azul</description>
-            <price>5.79</price>
-            <stock>22</stock>
+            <description>pasta termica titan 1.5gr gris ttcg30015</description>
+            <price>3.55</price>
+            <stock>119</stock>
             <category>FAN</category>
         </Product>
         <Product>
-            <description>tooq tqep.700sp 700w atx 12v 20+4pin 4xide 4sata</description>
-            <price>32.81</price>
-            <stock>14</stock>
+            <description>fuente atx 850w nox urano tx 850</description>
+            <price>58.18</price>
+            <stock>2</stock>
             <category>POWER_SUPPLY</category>
         </Product>
         <Product>
-            <description>samsung sh.224fb dvd.rw sata bulk sin soft negra</description>
-            <price>12.15</price>
-            <stock>43</stock>
+            <description>samsung se208gb regrab. externa slim usb roja</description>
+            <price>21.07</price>
+            <stock>6</stock>
             <category>DVD_WRITER</category>
         </Product>
         <pcName>WORKINGPC</pcName>
@@ -271,6 +289,12 @@
             <category>CPU</category>
         </productList>
         <productList>
+            <description>nox atx coolbay sx sin fuente audiohd usb3.0 negra</description>
+            <price>35.62</price>
+            <stock>10</stock>
+            <category>CASE</category>
+        </productList>
+        <productList>
             <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
             <price>149.17</price>
             <stock>51</stock>
@@ -325,21 +349,21 @@
             <category>SPEAKER</category>
         </productList>
         <productList>
-            <description>nox ventilador coolfan 1200rpm 12cm + 4 led azul</description>
-            <price>5.79</price>
-            <stock>22</stock>
+            <description>pasta termica titan 1.5gr gris ttcg30015</description>
+            <price>3.55</price>
+            <stock>119</stock>
             <category>FAN</category>
         </productList>
         <productList>
-            <description>tooq tqep.700sp 700w atx 12v 20+4pin 4xide 4sata</description>
-            <price>32.81</price>
-            <stock>14</stock>
+            <description>fuente atx 850w nox urano tx 850</description>
+            <price>58.18</price>
+            <stock>2</stock>
             <category>POWER_SUPPLY</category>
         </productList>
         <productList>
-            <description>samsung sh.224fb dvd.rw sata bulk sin soft negra</description>
-            <price>12.15</price>
-            <stock>43</stock>
+            <description>samsung se208gb regrab. externa slim usb roja</description>
+            <price>21.07</price>
+            <stock>6</stock>
             <category>DVD_WRITER</category>
         </productList>
         <totalPrice>0.0</totalPrice>
@@ -358,6 +382,12 @@
             <category>CPU</category>
         </Product>
         <Product>
+            <description>unyka caja micro atx 500w uk3807 negra</description>
+            <price>24.96</price>
+            <stock>14</stock>
+            <category>CASE</category>
+        </Product>
+        <Product>
             <description>gigabyte vga gtx 750 ti oc 2gb ddr5</description>
             <price>110.66</price>
             <stock>396</stock>
@@ -388,6 +418,12 @@
             <category>RAM</category>
         </Product>
         <Product>
+            <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>34.05</price>
+            <stock>108</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
             <description>raton logitech m175 id bulk</description>
             <price>14.55</price>
             <stock>17</stock>
@@ -398,6 +434,36 @@
             <price>8.6</price>
             <stock>42</stock>
             <category>MOUSE</category>
+        </Product>
+        <Product>
+            <description>tacens mars gaming altavoces 2.0 ms1 negro rojo</description>
+            <price>11.4</price>
+            <stock>287</stock>
+            <category>SPEAKER</category>
+        </Product>
+        <Product>
+            <description>approx teclado inal smart tv touchpad appkbtv02 ne</description>
+            <price>28.51</price>
+            <stock>19</stock>
+            <category>KEYBOARD</category>
+        </Product>
+        <Product>
+            <description>arctic refr. alpine 11 gt r.2 775 1155 1156</description>
+            <price>8.18</price>
+            <stock>4</stock>
+            <category>FAN</category>
+        </Product>
+        <Product>
+            <description>tooq f.a. 480w pfc pasivo atx sata</description>
+            <price>12.4</price>
+            <stock>50</stock>
+            <category>POWER_SUPPLY</category>
+        </Product>
+        <Product>
+            <description>lg dvd.rw interna 24x bulk sata sin software</description>
+            <price>12.07</price>
+            <stock>276</stock>
+            <category>DVD_WRITER</category>
         </Product>
         <pcName>STANDARDPC</pcName>
         <productList>
@@ -413,6 +479,12 @@
             <category>CPU</category>
         </productList>
         <productList>
+            <description>unyka caja micro atx 500w uk3807 negra</description>
+            <price>24.96</price>
+            <stock>14</stock>
+            <category>CASE</category>
+        </productList>
+        <productList>
             <description>gigabyte vga gtx 750 ti oc 2gb ddr5</description>
             <price>110.66</price>
             <stock>396</stock>
@@ -443,6 +515,12 @@
             <category>RAM</category>
         </productList>
         <productList>
+            <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>34.05</price>
+            <stock>108</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
             <description>raton logitech m175 id bulk</description>
             <price>14.55</price>
             <stock>17</stock>
@@ -453,6 +531,36 @@
             <price>8.6</price>
             <stock>42</stock>
             <category>MOUSE</category>
+        </productList>
+        <productList>
+            <description>tacens mars gaming altavoces 2.0 ms1 negro rojo</description>
+            <price>11.4</price>
+            <stock>287</stock>
+            <category>SPEAKER</category>
+        </productList>
+        <productList>
+            <description>approx teclado inal smart tv touchpad appkbtv02 ne</description>
+            <price>28.51</price>
+            <stock>19</stock>
+            <category>KEYBOARD</category>
+        </productList>
+        <productList>
+            <description>arctic refr. alpine 11 gt r.2 775 1155 1156</description>
+            <price>8.18</price>
+            <stock>4</stock>
+            <category>FAN</category>
+        </productList>
+        <productList>
+            <description>tooq f.a. 480w pfc pasivo atx sata</description>
+            <price>12.4</price>
+            <stock>50</stock>
+            <category>POWER_SUPPLY</category>
+        </productList>
+        <productList>
+            <description>lg dvd.rw interna 24x bulk sata sin software</description>
+            <price>12.07</price>
+            <stock>276</stock>
+            <category>DVD_WRITER</category>
         </productList>
         <totalPrice>0.0</totalPrice>
     </PC>
@@ -470,6 +578,12 @@
             <category>CPU</category>
         </Product>
         <Product>
+            <description>hiditec caja mini itx tac03 300w</description>
+            <price>35.62</price>
+            <stock>14</stock>
+            <category>CASE</category>
+        </Product>
+        <Product>
             <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
             <price>149.17</price>
             <stock>51</stock>
@@ -482,33 +596,27 @@
             <category>GPU</category>
         </Product>
         <Product>
-            <description>w.digital 1tb 3.5 wd10ezex sata3 7200 64mb wd blue</description>
-            <price>45.79</price>
-            <stock>31</stock>
+            <description>w.d. hdd 1tb 7200rpm 64mb sata3 caviar blue</description>
+            <price>46.45</price>
+            <stock>38</stock>
             <category>HDD</category>
         </Product>
         <Product>
-            <description>seagate hdd 2.5 500gb 5400rpm momentus thin 7mm</description>
-            <price>37.11</price>
-            <stock>32</stock>
+            <description>w.d. hdd 3tb 64mb sata3 6gbps caviar green</description>
+            <price>87.85</price>
+            <stock>3</stock>
             <category>HDD</category>
-        </Product>
-        <Product>
-            <description>modulo ddr4 8gb pc2133 kingston hyperx fury black</description>
-            <price>43.22</price>
-            <stock>41</stock>
-            <category>RAM</category>
-        </Product>
-        <Product>
-            <description>memoria patriot signature line 2gb ddr2 800mhz psd</description>
-            <price>18.93</price>
-            <stock>2</stock>
-            <category>RAM</category>
         </Product>
         <Product>
             <description>kingston ddr3 8gb 1600mhz hyperx fury blue cl10</description>
             <price>39.92</price>
             <stock>63</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
+            <description>kingston hyperx savage 8gb 1866mhz ddr3 cl9 xmp</description>
+            <price>41.65</price>
+            <stock>15</stock>
             <category>RAM</category>
         </Product>
         <Product>
@@ -518,27 +626,27 @@
             <category>MOUSE</category>
         </Product>
         <Product>
-            <description>trust altavoces 2.0 mila 5w rms usb negro</description>
-            <price>8.76</price>
-            <stock>13</stock>
+            <description>omega altavoces pc 2.0 og 15 6w usb negro</description>
+            <price>5.04</price>
+            <stock>55</stock>
             <category>SPEAKER</category>
         </Product>
         <Product>
-            <description>nox ventilador coolfan 1200rpm 12cm + 4 led azul</description>
-            <price>5.79</price>
-            <stock>22</stock>
+            <description>arctic refr. alpine 11 gt r.2 775 1155 1156</description>
+            <price>8.18</price>
+            <stock>4</stock>
             <category>FAN</category>
         </Product>
         <Product>
-            <description>tooq tqep.700sp 700w atx 12v 20+4pin 4xide 4sata</description>
-            <price>32.81</price>
-            <stock>14</stock>
+            <description>tacens mars gaming 700w mp700 pfc activo 14db</description>
+            <price>38.26</price>
+            <stock>31</stock>
             <category>POWER_SUPPLY</category>
         </Product>
         <Product>
-            <description>samsung sh.224fb dvd.rw sata bulk sin soft negra</description>
-            <price>12.15</price>
-            <stock>43</stock>
+            <description>samsung se208gb regrab. externa slim usb blanca</description>
+            <price>22.07</price>
+            <stock>7</stock>
             <category>DVD_WRITER</category>
         </Product>
         <pcName>MUSICPC</pcName>
@@ -555,6 +663,12 @@
             <category>CPU</category>
         </productList>
         <productList>
+            <description>hiditec caja mini itx tac03 300w</description>
+            <price>35.62</price>
+            <stock>14</stock>
+            <category>CASE</category>
+        </productList>
+        <productList>
             <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
             <price>149.17</price>
             <stock>51</stock>
@@ -567,33 +681,27 @@
             <category>GPU</category>
         </productList>
         <productList>
-            <description>w.digital 1tb 3.5 wd10ezex sata3 7200 64mb wd blue</description>
-            <price>45.79</price>
-            <stock>31</stock>
+            <description>w.d. hdd 1tb 7200rpm 64mb sata3 caviar blue</description>
+            <price>46.45</price>
+            <stock>38</stock>
             <category>HDD</category>
         </productList>
         <productList>
-            <description>seagate hdd 2.5 500gb 5400rpm momentus thin 7mm</description>
-            <price>37.11</price>
-            <stock>32</stock>
+            <description>w.d. hdd 3tb 64mb sata3 6gbps caviar green</description>
+            <price>87.85</price>
+            <stock>3</stock>
             <category>HDD</category>
-        </productList>
-        <productList>
-            <description>modulo ddr4 8gb pc2133 kingston hyperx fury black</description>
-            <price>43.22</price>
-            <stock>41</stock>
-            <category>RAM</category>
-        </productList>
-        <productList>
-            <description>memoria patriot signature line 2gb ddr2 800mhz psd</description>
-            <price>18.93</price>
-            <stock>2</stock>
-            <category>RAM</category>
         </productList>
         <productList>
             <description>kingston ddr3 8gb 1600mhz hyperx fury blue cl10</description>
             <price>39.92</price>
             <stock>63</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
+            <description>kingston hyperx savage 8gb 1866mhz ddr3 cl9 xmp</description>
+            <price>41.65</price>
+            <stock>15</stock>
             <category>RAM</category>
         </productList>
         <productList>
@@ -603,27 +711,27 @@
             <category>MOUSE</category>
         </productList>
         <productList>
-            <description>trust altavoces 2.0 mila 5w rms usb negro</description>
-            <price>8.76</price>
-            <stock>13</stock>
+            <description>omega altavoces pc 2.0 og 15 6w usb negro</description>
+            <price>5.04</price>
+            <stock>55</stock>
             <category>SPEAKER</category>
         </productList>
         <productList>
-            <description>nox ventilador coolfan 1200rpm 12cm + 4 led azul</description>
-            <price>5.79</price>
-            <stock>22</stock>
+            <description>arctic refr. alpine 11 gt r.2 775 1155 1156</description>
+            <price>8.18</price>
+            <stock>4</stock>
             <category>FAN</category>
         </productList>
         <productList>
-            <description>tooq tqep.700sp 700w atx 12v 20+4pin 4xide 4sata</description>
-            <price>32.81</price>
-            <stock>14</stock>
+            <description>tacens mars gaming 700w mp700 pfc activo 14db</description>
+            <price>38.26</price>
+            <stock>31</stock>
             <category>POWER_SUPPLY</category>
         </productList>
         <productList>
-            <description>samsung sh.224fb dvd.rw sata bulk sin soft negra</description>
-            <price>12.15</price>
-            <stock>43</stock>
+            <description>samsung se208gb regrab. externa slim usb blanca</description>
+            <price>22.07</price>
+            <stock>7</stock>
             <category>DVD_WRITER</category>
         </productList>
         <totalPrice>0.0</totalPrice>
