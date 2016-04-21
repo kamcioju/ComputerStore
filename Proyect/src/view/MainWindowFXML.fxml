@@ -28,7 +28,7 @@
          <children>
             <AnchorPane GridPane.columnIndex="1">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="243.0" styleClass="ipad-dark-grey" stylesheets="@MyStyle.css" text="Create New PC" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#GoToShop" prefHeight="71.0" prefWidth="243.0" styleClass="ipad-dark-grey" stylesheets="@MyStyle.css" text="Create New PC" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="71.0" prefWidth="87.0">

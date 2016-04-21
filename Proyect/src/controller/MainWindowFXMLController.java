@@ -5,6 +5,8 @@
  */
 package controller;
 
+import es.upv.inf.Database;
+import es.upv.inf.Product;
 import java.io.Console;
 import java.io.IOException;
 import static java.lang.System.console;
@@ -68,22 +70,39 @@ public class MainWindowFXMLController implements Initializable {
     private void GoToPcDescription(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
-                Parent root = (Parent) loader.load();
-                PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
-                ChangeContent(root);
-                
+            Parent root = (Parent) loader.load();
+            PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
+            ChangeContent(root);
+
             if (event != null) {
                 Button btn = (Button) event.getSource();
-                String pcName = btn.getId();                
+                String pcName = btn.getId();
                 for (int i = 0; i < pcList.size(); i++) {
                     String tempName = pcList.get(i).getPcName().toUpperCase();
                     if (tempName.equals(pcName)) {
-                        CartPC.currentPC=pcList.get(i);
+                        CartPC.currentPC = pcList.get(i);
                     }
                 }
             }
             pcController.initController(CartPC.currentPC);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void GoToShop(ActionEvent event) {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ProductsListFXML.fxml"));
+            Parent root = (Parent) loader.load();
+            ProductsListFXMLController productsController = loader.<ProductsListFXMLController>getController();
+            ChangeContent(root);
+            List<Product> product_list = Database.getProductByCategory(Product.Category.MOTHERBOARD);
+            PC newPc = new PC();
+            CartPC.currentPC = newPc;
+            productsController.initController(product_list);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -106,7 +125,7 @@ public class MainWindowFXMLController implements Initializable {
 // Before Java 8
             if (result.isPresent()) {
                 for (PC pc : userPcs) {
-                    if (pc.getPcName().equals(result.toString())) {
+                    if (pc.getPcName() == result.get()) {
                         CartPC.currentPC = pc;
                         GoToPcDescription(null);
                     }

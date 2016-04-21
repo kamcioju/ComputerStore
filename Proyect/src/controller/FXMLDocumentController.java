@@ -52,7 +52,7 @@ public class FXMLDocumentController implements Initializable {
     private List<Product> product_list = new ArrayList<>();
     private PC defaultPc;
     public static PC currentPc;
-    
+
     public void ChangeContent(Parent loader) {
         Stage search = new Stage();
         Pane aPane = (Pane) loader;
@@ -62,16 +62,15 @@ public class FXMLDocumentController implements Initializable {
         //if(type==1)
         content.getChildren().addAll(aPane.getChildren());
         CurrentContent.currentContent = content;
-        CurrentContent.type=2;
+        CurrentContent.type = 2;
 //else
         //content.getChildren().addAll(aPane.getChildren());
     }
 
-    
     public AnchorPane GetContent() {
-    return content;
+        return content;
     }
-    
+
     public void ShowDefaultPc(String pcName) {
         for (int i = 0; i < pcList.size(); i++) {
             String tempString = pcList.get(i).getPcName();
@@ -85,24 +84,22 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void GoToPcDescription(ActionEvent event) {
         try {
-            Button btn = (Button) event.getSource();
-            String pcName = btn.getId();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
             Parent root = (Parent) loader.load();
             PcDescriptionFXMLController pcController = loader.<PcDescriptionFXMLController>getController();
             ChangeContent(root);
-            for (int i = 0; i < pcList.size(); i++) {
-                String tempName = pcList.get(i).getPcName().toUpperCase();
-                if (tempName.equals(pcName)) {
-                    pcController.initController(pcList.get(i));
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            pcController.initController(null);
+        
     }
+    catch (IOException e
 
-    public void GoToPcDesc(PC pc) {
+    
+        ) {
+            e.printStackTrace();
+    }
+}
+
+public void GoToPcDesc(PC pc) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/PcDescriptionFXML.fxml"));
             Parent root = (Parent) loader.load();
@@ -121,7 +118,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
-    private void GoToProductsList(ActionEvent event) {
+        private void GoToProductsList(ActionEvent event) {
         try {
             Button btn = (Button) event.getSource();
             //String categoryName = btn.getText();
@@ -131,14 +128,14 @@ public class FXMLDocumentController implements Initializable {
             ProductsListFXMLController productsController = loader.<ProductsListFXMLController>getController();
             ChangeContent(root);
             product_list = Database.getProductByCategory(Product.Category.valueOf(categoryName.toUpperCase()));
-            productsController.initController(product_list);
+            productsController.initController(product_list);            
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     @FXML
-    private void GoToMainPage(ActionEvent event) {
+        private void GoToMainPage(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainWindowFXML.fxml"));
             Parent root = (Parent) loader.load();
@@ -163,7 +160,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+        public void initialize(URL url, ResourceBundle rb) {
         try {
             pcList = PcMarshing.unMarshalingDefaultSet().getPcList();
            

@@ -24,19 +24,21 @@ public class PC {
 
     @XmlElement(name = "Product")
     private List<Product> productsList = new ArrayList<Product>();
+    private double totalPrice;
+    private String pcName;
 
     //Constructors
     public PC() {
+        this.pcName = new String();
         this.totalPrice = 0.0;
     }
 
     public List<Product> GetProductsByCategory(Product.Category category) {
         List<Product> tempList = new ArrayList<Product>();
         for (Product product : productsList) {
-              if(product.getCategory().equals(category))
-                      {
-                          tempList.add(product);
-                      }
+            if (product.getCategory().equals(category)) {
+                tempList.add(product);
+            }
         }
         return tempList;
     }
@@ -48,17 +50,6 @@ public class PC {
     public void setProductList(List<Product> Components) {
         this.productsList = Components;
     }
-
-    /*private Product motherboard;
-    private Product cpu;
-    private Product computerCase;
-    private List<Product> ramList = new ArrayList<Product>();
-    private List<Product> gpuList = new ArrayList<Product>();
-    private List<Product> hardDriveList= new ArrayList<Product>();
-    private List<Product> optionalComponents = new ArrayList<Product>();   
-     */
-    private double totalPrice;
-    private String pcName;
 
     public String getPcName() {
         return pcName;

@@ -95,7 +95,7 @@
          <children>
             <ButtonBar buttonOrder="" minHeight="60.0" prefHeight="80.0" prefWidth="358.0">
                <buttons>
-                  <Button fx:id="addToCardButton1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#RemoveFromCard" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonRemove" text="Remove" textAlignment="CENTER">
+                  <Button fx:id="removeFromCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#RemoveFromCard" prefHeight="40.0" prefWidth="206.0" style="-fx-min-width: 80;" styleClass="buttonRemove" text="Remove" textAlignment="CENTER">
                      <effect>
                         <DropShadow height="38.8" offsetX="-5.0" offsetY="10.0" radius="27.794999999999998" spread="0.2" width="74.38" />
                      </effect>

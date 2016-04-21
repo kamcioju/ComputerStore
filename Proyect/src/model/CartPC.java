@@ -17,18 +17,23 @@ import java.util.List;
 public class CartPC {
 
     public static PC currentPC = new PC();
+
     public static String addProduct(Product product) {
         Product.Category cat = product.getCategory();
         String catString = product.getCategory().toString();
         List<Product> productCategoryList = currentPC.GetProductsByCategory(cat);
         int checkMessage = CheckAvailability(productCategoryList, product, catString);
-        switch(checkMessage){
-            
-            case 1: return "Stock is empty.";
-            case 2: return "You can not add more this type of product.";
-            case 3: currentPC.addProduct(product); 
-                    return "Product added to cart!";
-            
+        switch (checkMessage) {
+
+            case 1:
+                return "Stock is empty.";
+            case 2:
+                return "You can not add more this type of product.";
+            case 3:
+                currentPC.addProduct(product);
+                currentPC.setPcName("");
+                return "Product added to cart!";
+
         }
         return "Try again";
     }
@@ -77,5 +82,12 @@ public class CartPC {
         } else {
             return 2; //full cart
         }
+    }
+
+    public static String removeProduct(Product product) {
+        List<Product> productCategoryList = currentPC.getProductList();
+        currentPC.getProductList().remove(product);
+        currentPC.setPcName("");
+        return "Product deleted!";
     }
 }
