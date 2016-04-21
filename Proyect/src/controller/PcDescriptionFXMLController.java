@@ -131,28 +131,32 @@ public class PcDescriptionFXMLController implements Initializable {
             int checkComponentsInfo = PcMarshing.CheckComponents(currentPc);
             if (checkComponentsInfo == 3) //Your cart is OK.
             {
-                currentPc.setPcName(configurationName);
-                PcMarshing.marshalingUserConfiguration(currentPc);
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Configuration saved.");
-                alert.showAndWait();
-                //TODO Jak jest pusty field to alert
+                SaveConfiguration(configurationName);
             } else if (checkComponentsInfo == 2) {
                 Alert alert = new Alert(AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation Dialog");
-                alert.setHeaderText("Header");
-                alert.setContentText("Do you want to continue?");
+                alert.setHeaderText("You have not any optional parts!");
+                alert.setContentText("Do You still want to save configuration?");
                 Optional<ButtonType> result = alert.showAndWait();
-                if (result.isPresent() && result.get() == ButtonType.OK) {
-                    System.out.println("OK");
-                } else {
-                    System.out.println("CANCEL");
+                if (result.isPresent() && result.get() == ButtonType.OK) {                    
+                SaveConfiguration(configurationName);
                 }
-                currentPc.setPcName(configurationName);
-                PcMarshing.marshalingUserConfiguration(currentPc);
-                Alert alertt = new Alert(Alert.AlertType.INFORMATION, "Configuration saved.");
-                alert.showAndWait();
+                }
+            else if(checkComponentsInfo == 1)
+            {
+                Alert error = new Alert(Alert.AlertType.ERROR, "Add all mandatory components!");
+                error.showAndWait();
+                
             }
         }
+    }
+    
+    public void SaveConfiguration(String configurationName)
+    {
+        currentPc.setPcName(configurationName);
+                PcMarshing.marshalingUserConfiguration(currentPc);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Configuration saved.");
+                alert.showAndWait();
     }
 
     @FXML

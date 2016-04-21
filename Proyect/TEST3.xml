@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listPC>
+    <PC>
+        <Product>
+            <description>asrock placa base fm2a58m vg3 r2 0 matx fm2</description>
+            <price>39.09</price>
+            <stock>163</stock>
+            <category>MOTHERBOARD</category>
+        </Product>
+        <Product>
+            <description>gigabyte vga gtx 750 ti oc 2gb ddr5</description>
+            <price>110.66</price>
+            <stock>396</stock>
+            <category>GPU</category>
+        </Product>
+        <Product>
+            <description>gigabyte nv gtx960 gddr5 4gb 128bit 2dvi+hdmi+3dp</description>
+            <price>192.98</price>
+            <stock>71</stock>
+            <category>GPU</category>
+        </Product>
+        <Product>
+            <description>toshiba hdd 3.5 1tb 32mb sata3 7200rpm</description>
+            <price>39.17</price>
+            <stock>785</stock>
+            <category>HDD</category>
+        </Product>
+        <Product>
+            <description>toshiba hdd 3.5 2tb 64mb 7200rpm sata3 6gbps</description>
+            <price>59.75</price>
+            <stock>70</stock>
+            <category>HDD</category>
+        </Product>
+        <Product>
+            <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>34.05</price>
+            <stock>108</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
+            <description>raton logitech m175 id bulk</description>
+            <price>14.55</price>
+            <stock>17</stock>
+            <category>MOUSE</category>
+        </Product>
+        <Product>
+            <description>raton optico logitech b100 negro</description>
+            <price>8.6</price>
+            <stock>42</stock>
+            <category>MOUSE</category>
+        </Product>
+        <pcName>TEST3</pcName>
+        <productList>
+            <description>asrock placa base fm2a58m vg3 r2 0 matx fm2</description>
+            <price>39.09</price>
+            <stock>163</stock>
+            <category>MOTHERBOARD</category>
+        </productList>
+        <productList>
+            <description>gigabyte vga gtx 750 ti oc 2gb ddr5</description>
+            <price>110.66</price>
+            <stock>396</stock>
+            <category>GPU</category>
+        </productList>
+        <productList>
+            <description>gigabyte nv gtx960 gddr5 4gb 128bit 2dvi+hdmi+3dp</description>
+            <price>192.98</price>
+            <stock>71</stock>
+            <category>GPU</category>
+        </productList>
+        <productList>
+            <description>toshiba hdd 3.5 1tb 32mb sata3 7200rpm</description>
+            <price>39.17</price>
+            <stock>785</stock>
+            <category>HDD</category>
+        </productList>
+        <productList>
+            <description>toshiba hdd 3.5 2tb 64mb 7200rpm sata3 6gbps</description>
+            <price>59.75</price>
+            <stock>70</stock>
+            <category>HDD</category>
+        </productList>
+        <productList>
+            <description>kingston 8gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>34.05</price>
+            <stock>108</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
+            <description>raton logitech m175 id bulk</description>
+            <price>14.55</price>
+            <stock>17</stock>
+            <category>MOUSE</category>
+        </productList>
+        <productList>
+            <description>raton optico logitech b100 negro</description>
+            <price>8.6</price>
+            <stock>42</stock>
+            <category>MOUSE</category>
+        </productList>
+        <totalPrice>0.0</totalPrice>
+    </PC>
+</listPC>

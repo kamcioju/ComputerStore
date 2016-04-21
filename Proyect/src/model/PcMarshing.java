@@ -113,7 +113,7 @@ public class PcMarshing {
             try {
                 String filename = "userConfigurations.txt";
                 FileWriter fw = new FileWriter(filename, true); //the true will append the new data
-                fw.write(configurationName);//appends the string to the file
+                fw.write(System.getProperty("line.separator")+configurationName);//appends the string to the file
                 fw.close();
             } catch (IOException ioe) {
                 System.err.println("IOException: " + ioe.getMessage());
@@ -164,15 +164,14 @@ public class PcMarshing {
             }
         }
 
-        for (String productCat : optionalList) {
-            for (Product product : pc.getProductList()) {
-                if (product.getCategory().toString().equals(productCat)) {
-                    optionalParts++;
-                }
+          for (Product product : pc.getProductList()) {
+            String productCat = product.getCategory().toString();
+            if (optionalList.contains(productCat)) {
+                optionalParts++;
             }
         }
         
-        if(requiredParts<6 && hardDrives<1)
+        if((requiredParts<6 && hardDrives<2) ||(requiredParts<7 && hardDrives<3))
         {
             return 1; //You have not enought mandatory parts
         }
