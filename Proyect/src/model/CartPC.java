@@ -8,6 +8,9 @@ package model;
 import es.upv.inf.Product;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.Button;
 
 /**
  * a
@@ -17,23 +20,42 @@ import java.util.List;
 public class CartPC {
 
     public static PC currentPC = new PC();
-
     public static String addProduct(Product product) {
         Product.Category cat = product.getCategory();
         String catString = product.getCategory().toString();
         List<Product> productCategoryList = currentPC.GetProductsByCategory(cat);
         int checkMessage = CheckAvailability(productCategoryList, product, catString);
-        switch (checkMessage) {
-
-            case 1:
-                return "Stock is empty.";
-            case 2:
-                return "You can not add more this type of product.";
-            case 3:
-                currentPC.addProduct(product);
-                currentPC.setPcName("");
-                return "Product added to cart!";
-
+        switch(checkMessage){
+            
+            case 1: return "Stock is empty.";
+            case 2: return "You can not add more this type of product.";
+            case 3: currentPC.addProduct(product);
+            
+            switch (catString) {
+                case "MOTHERBOARD": 
+                    CurrentContent.button1.set(false);
+                    break;
+                case "CPU":  
+                    CurrentContent.button2.set(false);
+                    break;
+                case "RAM":   
+                    CurrentContent.button3.set(false);
+                    break;
+                case "GPU":    
+                    CurrentContent.button4.set(false);
+                    break;
+                case "HDD":
+                case "HDD_SSD": 
+                    CurrentContent.button5.set(false);
+                    break;
+                case "CASE":
+                    CurrentContent.button6.set(false);
+                    break;
+            }
+            
+                    
+                    return "Product added to cart!";
+            
         }
         return "Try again";
     }
@@ -55,6 +77,7 @@ public class CartPC {
                 case "CPU":
                 case "CASE":
                 case "POWER_SUPPLY":
+                case "MULTIREADER":
                     return 2; //full cart
                 case "HDD":
                 case "HDD_SDD":
@@ -66,6 +89,7 @@ public class CartPC {
                 case "GPU":
                 case "DVD_WRITER":
                 case "KEYBOARD":
+                case "SPEAKER":
                     return CheckQuantiy(productList, 2);
 
             }
@@ -83,11 +107,12 @@ public class CartPC {
             return 2; //full cart
         }
     }
-
-    public static String removeProduct(Product product) {
+    
+      public static String removeProduct(Product product) {
         List<Product> productCategoryList = currentPC.getProductList();
         currentPC.getProductList().remove(product);
         currentPC.setPcName("");
         return "Product deleted!";
     }
+
 }

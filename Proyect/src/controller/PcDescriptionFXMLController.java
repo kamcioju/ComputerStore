@@ -102,11 +102,10 @@ public class PcDescriptionFXMLController implements Initializable {
         categoryColumn.setCellValueFactory(new PropertyValueFactory<Product, String>("category"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("price"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product, Integer>("quantity"));
-        quantityColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(3));
+      
         descriptionColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(2).subtract(10));
-        quantityColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(3));
-        categoryColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(3));
-
+        quantityColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(5));
+        categoryColumn.prefWidthProperty().bind(productsTableView.widthProperty().divide(5));
     }
 
     private void addComponentsToTableView(ObservableList<Product> product_list) {
