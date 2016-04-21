@@ -195,11 +195,12 @@ public class PcMarshing {
         }
         if((requiredParts ==6 && hardDrives==1) || (requiredParts == 7 && hardDrives == 2))
         {
-              return 3; //everything is OK, GO HOME
-        }       
-         else if (optionalParts < 1) {
+            if (optionalParts < 1) {
             return 2; // Warning, 0 optional parts
-        } else {
+            }
+            
+              return 3; //everything is OK, GO HOME
+         } else {
          
             return 1; //You have not enought mandatory parts
         }
