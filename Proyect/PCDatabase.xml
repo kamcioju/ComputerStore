@@ -174,6 +174,96 @@
     </PC>
     <PC>
         <Product>
+            <description>asrock fm2a58m.vg3+ r2.0 2ddr3 vga gblan matx</description>
+            <price>39.5</price>
+            <stock>5</stock>
+            <category>MOTHERBOARD</category>
+        </Product>
+        <Product>
+            <description>intel core i7 4790 3.6ghz 1150 box</description>
+            <price>285.87</price>
+            <stock>11</stock>
+            <category>CPU</category>
+        </Product>
+        <Product>
+            <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
+            <price>149.17</price>
+            <stock>51</stock>
+            <category>GPU</category>
+        </Product>
+        <Product>
+            <description>gigabyte gt730 2.0 2gb ddr3 64bits vga+dvi+hdmi</description>
+            <price>57.52</price>
+            <stock>1</stock>
+            <category>GPU</category>
+        </Product>
+        <Product>
+            <description>w.digital 1tb 3.5 wd10ezex sata3 7200 64mb wd blue</description>
+            <price>45.79</price>
+            <stock>31</stock>
+            <category>HDD</category>
+        </Product>
+        <Product>
+            <description>seagate hdd 2.5 500gb 5400rpm momentus thin 7mm</description>
+            <price>37.11</price>
+            <stock>32</stock>
+            <category>HDD</category>
+        </Product>
+        <Product>
+            <description>kingston 4gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>19.09</price>
+            <stock>228</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
+            <description>modulo ddr4 8gb pc2133 kingston hyperx fury black</description>
+            <price>43.22</price>
+            <stock>41</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
+            <description>memoria patriot signature line 2gb ddr2 800mhz psd</description>
+            <price>18.93</price>
+            <stock>2</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
+            <description>kingston ddr3 8gb 1600mhz hyperx fury blue cl10</description>
+            <price>39.92</price>
+            <stock>63</stock>
+            <category>RAM</category>
+        </Product>
+        <Product>
+            <description>raton logitech m175 id bulk</description>
+            <price>14.55</price>
+            <stock>17</stock>
+            <category>MOUSE</category>
+        </Product>
+        <Product>
+            <description>trust altavoces 2.1 raina. 10w rms. usb. negro</description>
+            <price>16.69</price>
+            <stock>21</stock>
+            <category>SPEAKER</category>
+        </Product>
+        <Product>
+            <description>zalman refrig. cnps90f intel amd</description>
+            <price>9.26</price>
+            <stock>4</stock>
+            <category>FAN</category>
+        </Product>
+        <Product>
+            <description>coolbox f.a. pc case 500w 12cms atx silenciosa</description>
+            <price>11.16</price>
+            <stock>16</stock>
+            <category>POWER_SUPPLY</category>
+        </Product>
+        <Product>
+            <description>lg dvd.rw interna 24x bulk sata sin software</description>
+            <price>12.07</price>
+            <stock>276</stock>
+            <category>DVD_WRITER</category>
+        </Product>
+        <Product>
             <description>msi a68hm p33 v2 fm2+ 2ddr3 dvi sata3 usb3.0 matx</description>
             <price>42.31</price>
             <stock>1</stock>
@@ -257,7 +347,97 @@
             <stock>43</stock>
             <category>DVD_WRITER</category>
         </Product>
-        <pcName>WORKINGPC</pcName>
+        <pcName>MUSICPC</pcName>
+        <productList>
+            <description>asrock fm2a58m.vg3+ r2.0 2ddr3 vga gblan matx</description>
+            <price>39.5</price>
+            <stock>5</stock>
+            <category>MOTHERBOARD</category>
+        </productList>
+        <productList>
+            <description>intel core i7 4790 3.6ghz 1150 box</description>
+            <price>285.87</price>
+            <stock>11</stock>
+            <category>CPU</category>
+        </productList>
+        <productList>
+            <description>gigabyte vga nvidia gtx 950 wf oc 2gb ddr5</description>
+            <price>149.17</price>
+            <stock>51</stock>
+            <category>GPU</category>
+        </productList>
+        <productList>
+            <description>gigabyte gt730 2.0 2gb ddr3 64bits vga+dvi+hdmi</description>
+            <price>57.52</price>
+            <stock>1</stock>
+            <category>GPU</category>
+        </productList>
+        <productList>
+            <description>w.digital 1tb 3.5 wd10ezex sata3 7200 64mb wd blue</description>
+            <price>45.79</price>
+            <stock>31</stock>
+            <category>HDD</category>
+        </productList>
+        <productList>
+            <description>seagate hdd 2.5 500gb 5400rpm momentus thin 7mm</description>
+            <price>37.11</price>
+            <stock>32</stock>
+            <category>HDD</category>
+        </productList>
+        <productList>
+            <description>kingston 4gb 1600 ddr3 cl10 dimm hyperx furyser</description>
+            <price>19.09</price>
+            <stock>228</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
+            <description>modulo ddr4 8gb pc2133 kingston hyperx fury black</description>
+            <price>43.22</price>
+            <stock>41</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
+            <description>memoria patriot signature line 2gb ddr2 800mhz psd</description>
+            <price>18.93</price>
+            <stock>2</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
+            <description>kingston ddr3 8gb 1600mhz hyperx fury blue cl10</description>
+            <price>39.92</price>
+            <stock>63</stock>
+            <category>RAM</category>
+        </productList>
+        <productList>
+            <description>raton logitech m175 id bulk</description>
+            <price>14.55</price>
+            <stock>17</stock>
+            <category>MOUSE</category>
+        </productList>
+        <productList>
+            <description>trust altavoces 2.1 raina. 10w rms. usb. negro</description>
+            <price>16.69</price>
+            <stock>21</stock>
+            <category>SPEAKER</category>
+        </productList>
+        <productList>
+            <description>zalman refrig. cnps90f intel amd</description>
+            <price>9.26</price>
+            <stock>4</stock>
+            <category>FAN</category>
+        </productList>
+        <productList>
+            <description>coolbox f.a. pc case 500w 12cms atx silenciosa</description>
+            <price>11.16</price>
+            <stock>16</stock>
+            <category>POWER_SUPPLY</category>
+        </productList>
+        <productList>
+            <description>lg dvd.rw interna 24x bulk sata sin software</description>
+            <price>12.07</price>
+            <stock>276</stock>
+            <category>DVD_WRITER</category>
+        </productList>
         <productList>
             <description>msi a68hm p33 v2 fm2+ 2ddr3 dvi sata3 usb3.0 matx</description>
             <price>42.31</price>

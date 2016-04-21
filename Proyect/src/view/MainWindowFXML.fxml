@@ -70,7 +70,7 @@
                   </AnchorPane>
                   <AnchorPane GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
-                        <Button id="STANDARDPC" fx:id="button1" alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="42.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="173.0" prefWidth="280.0" stylesheets="@MyStyle.css" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Button id="GAMINGPC" fx:id="button1" alignment="CENTER" contentDisplay="CENTER" layoutX="35.0" layoutY="42.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="173.0" prefWidth="280.0" stylesheets="@MyStyle.css" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="MainMenu" />
                               <String fx:value="button1" />
@@ -87,7 +87,7 @@
                   </AnchorPane>
                   <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
-                        <Button id="STANDARDPC" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="42.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="206.0" prefWidth="312.0" stylesheets="@MyStyle.css" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Button id="WORKINGPC" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="42.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="206.0" prefWidth="312.0" stylesheets="@MyStyle.css" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="MainMenu" />
                               <String fx:value="button" />
@@ -107,7 +107,7 @@
                   </AnchorPane>
                   <AnchorPane GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
-                        <Button id="STANDARDPC" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="42.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="206.0" prefWidth="312.0" stylesheets="@MyStyle.css" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Button id="MUSICPC" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="42.0" mnemonicParsing="false" onAction="#GoToPcDescription" prefHeight="206.0" prefWidth="312.0" stylesheets="@MyStyle.css" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <styleClass>
                               <String fx:value="MainMenu" />
                               <String fx:value="button" />

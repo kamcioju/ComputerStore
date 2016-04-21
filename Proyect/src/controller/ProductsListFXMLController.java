@@ -24,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -72,6 +73,8 @@ public class ProductsListFXMLController implements Initializable {
     private Button showDetalisButton;
     @FXML
     private Button addToCardButton;
+    @FXML
+    private Label categoryLabel;
 
     public void setupSlider(ObservableList<Product> p_list) {
         //setup minimum and maximum
@@ -109,6 +112,8 @@ public class ProductsListFXMLController implements Initializable {
         this.staticProductList = p_list;
         tableList.addAll(this.staticProductList);
         setupSlider(tableList);
+        String cat =p_list.get(0).getCategory().toString();
+        categoryLabel.setText(cat.substring(0, 1)+cat.substring(1).replace("_", " ").toLowerCase());
         productsTableView.setItems(tableList);
         productsTableView.getSortOrder().add(descriptionColumn);
         showDetalisButton.disableProperty().bind(productsTableView.getSelectionModel().selectedItemProperty().isNull());

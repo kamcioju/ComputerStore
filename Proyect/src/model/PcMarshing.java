@@ -49,6 +49,19 @@ public class PcMarshing {
 
         PC WorkingPc = new PC();
         WorkingPc.setPcName("WorkingPc");
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(2));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(14));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.HDD).subList(3, 5));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.RAM).subList(1, 5));
+        WorkingPc.addProductList(Database.getProductByCategory(Product.Category.MOUSE).subList(0, 1));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.SPEAKER).get(4));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.FAN).get(5));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.POWER_SUPPLY).get(12));
+        WorkingPc.addProduct(Database.getProductByCategory(Product.Category.DVD_WRITER).get(2));
+        
+        PC MusicPc = new PC();
+        WorkingPc.setPcName("MusicPc");
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.MOTHERBOARD).get(3));
         WorkingPc.addProduct(Database.getProductByCategory(Product.Category.CPU).get(15));
         WorkingPc.addProductList(Database.getProductByCategory(Product.Category.GPU).subList(5, 7));
