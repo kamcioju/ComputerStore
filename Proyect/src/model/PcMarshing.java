@@ -15,6 +15,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import static model.CartPC.CheckQuantiy;
 import model.ListPCWrapper;
 import model.PC;
 
@@ -122,6 +123,69 @@ public class PcMarshing {
         }
     }
 
+    public static int CheckComponents(PC pc) {
+
+        ArrayList<String> requiredList = new ArrayList<String>() {
+            {
+                add("MOTHERBOARD");
+                add("CPU");
+                add("HDD");
+                add("HDD_SDD");
+                add("RAM");
+                add("GPU");
+                add("CASE");
+            }
+        };
+        ArrayList<String> currentRequired = new ArrayList<>();
+        ArrayList<String> optionalList = new ArrayList<String>() {
+            {
+                add("POWER_SUPPLY");
+                add("FAN");
+                add("SCREEN");
+                add("MOUSE");
+                add("DVD_WRITER");
+                add("KEYBOARD");
+            }
+        };
+        int requiredParts = 0;
+        int hardDrives = 0;
+        int optionalParts = 0;
+        for (Product product : pc.getProductList()) {
+            String productCat = product.getCategory().toString();
+            if (requiredList.contains(productCat)) {
+                if (!currentRequired.contains(productCat)) {
+                    currentRequired.add(productCat);
+                    requiredParts++;
+                    if(productCat=="HDD"||productCat=="HDD_SSD")
+                    {
+                        hardDrives++;
+                    }
+                }
+            }
+        }
+
+        for (String productCat : optionalList) {
+            for (Product product : pc.getProductList()) {
+                if (product.getCategory().toString().equals(productCat)) {
+                    optionalParts++;
+                }
+            }
+        }
+        
+        if(requiredParts<6 && hardDrives<1)
+        {
+            return 1; //You have not enought mandatory parts
+        }
+        else if(optionalParts<1)
+        {
+            return 2; // Warning, 0 optional parts
+        }
+        else
+        {
+            return 3; //everything is OK, GO HOME
+        }
+    }
+
     public static List<PC> LoadPcConfiguration() {
         try {
 
@@ -147,5 +211,3 @@ public class PcMarshing {
         return null;
     }
 }
-
-
